@@ -1,0 +1,14 @@
+def toatedifausemncontrar(a):
+    '''
+    verifica daca toate nr din sir sunt de forma a[j]<a[j+1]>a[j+2] sau a[j]>a[j+1]<a[j+2]
+    :param a: lista de nr intregi
+    :return: 1 daca numerele sunt de forma specificata, 0 in caz contrar
+    '''
+    for i in range(len(a) - 2):
+        if a[i] > a[i + 1]:
+            if a[i + 1] > a[i + 2]:
+                return 0
+        elif a[i] < a[i + 1]:
+            if a[i + 1] < a[i + 2]:
+                return 0
+    return 1
