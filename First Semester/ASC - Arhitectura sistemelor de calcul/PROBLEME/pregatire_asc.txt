@@ -1,0 +1,83 @@
+bits 32 ; assembling for the 32 bits architecture
+
+; declare the EntryPoint (a label defining the very first instruction of the program)
+global start        
+
+; declare external functions needed by our program
+extern exit               ; tell nasm that exit exists even if we won't be defining it
+import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+                          ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+
+; our data is declared here (the variables needed by our program)
+segment data use32 class=data
+    s dw 1432h, 8675h, 0ADBCh
+    ls equ ($-s)/2
+    x resb 4
+    d resb ls*2
+
+; our code starts here
+segment code use32 class=code
+    start:
+    mov ecx, ls
+    mov esi, s
+    mov edi, x
+    cld
+    repeta1:
+    mov dx, 0
+    lodsw
+    push ecx
+    mov ecx, 4
+    mov bx, 16
+   
+    pune_0:
+        mov dx, 0
+        div bx
+        xchg dx, ax
+        stosb
+        mov ax, dx
+        mov dx, 0
+    loop pune_0
+    mov ecx, 4
+    mov esi, 0
+    mov bl, 1
+    while:
+    cmp bl,1
+    je sorteaza
+    jne final
+    
+    sorteaza:
+    mov bl, 0
+    mov esi, 0
+    for:
+    
+    mov al,[x+esi]
+    mov ah,[x+esi+1]
+    inc esi
+    cmp ah, al
+    jl interschimba
+    jge for
+    interschimba:
+    xchg ah, al
+    mov bl,1
+    cmp esi, ls
+    jl for
+    jge while
+    loop sorteaza
+    mov ecx, 4
+    mov esi, x
+    mov edi, d
+    repeta3:
+    movsd
+    loop repeta3 
+    pop ecx
+    loop repeta1
+   
+    final:
+    
+    
+    
+    
+     
+        
+        push    dword 0      ; push the parameter for exit onto the stack
+        call    [exit]       ; call exit to terminate the program

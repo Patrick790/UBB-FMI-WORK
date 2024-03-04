@@ -1,0 +1,89 @@
+bits 32 ; assembling for the 32 bits architecture
+
+; declare the EntryPoint (a label defining the very first instruction of the program)
+global start        
+
+; declare external functions needed by our program
+extern exit               ; tell nasm that exit exists even if we won't be defining it
+import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+                          ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+import fopen msvcrt.dll
+import fread msvcrt.dll
+import fclose msvcrt.dll
+extern fopen, fread, fclose
+
+; our data is declared here (the variables needed by our program)
+segment data use32 class=data
+    ; ...
+     fisier db 'a.txt', 0
+    a db 0
+    contor dd 0
+    format_citire db '%c', 0
+    format_afisare db '%d', 0
+    consoane db 'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'
+    len equ $-consoane
+    acces db 'r', 0
+    descriptor_fisier dd -1
+    copie dd 0
+    
+    
+    
+
+; our code starts here
+segment code use32 class=code
+    start:
+        ; ...
+    ;fopen
+        push dword acces
+        push dword fisier
+        call[fopen]
+        add esp, 4*2
+        mov [descriptor_fisier], eax
+        cmp eax, 0
+        je final
+        ;fread
+        repeta:
+             ;fread(a, 1, 1, descriptor_fisier)
+             push dword[descriptor_fisier]
+             push dword 1
+             push dword 1
+             push dword a
+             call[fread]
+             add esp, 4*4
+             cmp eax, 0
+             je iesire_repeta
+             mov esi, 0
+             mov edi, len
+             mov [copie], ecx
+             mov ecx, len
+             consoane:
+                  mov al, byte[consoane + esi]
+                  inc esi
+                  cmp al, byte[a]
+                  je adauga
+                  jne end_consoane
+                  adauga:
+                     inc dword[contor]
+                  end_consoane:
+             loop consoane
+             mov ecx,[copie]
+             iesire_repeta:
+             ;printf
+             push dword[contor]
+             push dword format_afisare
+             call[printf]
+             add esp, 4*2
+             ;fclose
+             push dword[descriptor_fisier]
+             call[fclose]
+             add esp, 4
+        final:
+       
+       
+    
+ 
+     
+    
+        ; exit(0)
+        push    dword 0      ; push the parameter for exit onto the stack
+        call    [exit]       ; call exit to terminate the program
