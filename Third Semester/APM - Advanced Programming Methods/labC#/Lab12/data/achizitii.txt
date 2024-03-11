@@ -1,0 +1,8 @@
+1,sneakersi,2,790,1
+2,boxa,1,1200,2
+3,inghetata,3,32,1
+4,carti,3,123,2
+5,tricou,1,72,1
+6,schiuri,1,2300,4
+7,prajituri,2,65,4
+8,decoratiune,1,74,5
