@@ -1,0 +1,74 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/LstMasina.cpp
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\LstMasina.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\LstMasina.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "LstMasina.h"
+        -:    2:using std::shuffle;
+        -:    3:
+        -:    4:
+        -:    5:
+function _ZN11listaMasina13addCartoListaERK3Car called 1 returned 100% blocks executed 100%
+        1:    6:void listaMasina::addCartoLista(const Car& c) {
+        1:    7:    this->spalatorieMasini.push_back(c);
+        1:    7-block  0
+call    0 returned 1
+        1:    8:}
+        -:    9:
+function _ZN11listaMasina9emptyListEv called 2 returned 100% blocks executed 100%
+        2:   10:void listaMasina::emptyList() {
+        2:   11:    this->spalatorieMasini.clear();
+        2:   11-block  0
+call    0 returned 2
+        2:   12:}
+        -:   13:
+function _ZN11listaMasina15addRandomMasiniESt6vectorI3CarSaIS1_EEi called 2 returned 100% blocks executed 95%
+        2:   14:void listaMasina::addRandomMasini(vector<Car> originalMasini, int cate) {
+        2:   15:    shuffle(originalMasini.begin(), originalMasini.end(), std::default_random_engine(std::random_device{}())); //amesteca vectorul v
+        2:   15-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   15-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   15-block  2
+call    7 returned 2
+call    8 returned 2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+    $$$$$:   15-block  3
+       12:   16:    while(spalatorieMasini.size() < cate && !originalMasini.empty()){
+        2:   16-block  0
+       12:   16-block  1
+call    0 returned 12
+branch  1 taken 11 (fallthrough)
+branch  2 taken 1
+       11:   16-block  2
+call    3 returned 11
+branch  4 taken 10 (fallthrough)
+branch  5 taken 1
+       10:   16-block  3
+        2:   16-block  4
+       12:   16-block  5
+branch  6 taken 10
+branch  7 taken 2 (fallthrough)
+       10:   17:        spalatorieMasini.push_back(originalMasini.back());
+       10:   17-block  0
+call    0 returned 10
+call    1 returned 10
+       10:   18:        originalMasini.pop_back();
+call    0 returned 10
+        -:   19:    }
+        2:   20:}
+        2:   20-block  0
+        -:   21:
+function _ZN11listaMasina22getallspalatorieMasiniEv called 6 returned 100% blocks executed 100%
+        6:   22:const vector<Car>& listaMasina::getallspalatorieMasini() {
+        6:   23:    return this->spalatorieMasini;
+        6:   23-block  0
+        -:   24:}
+        -:   25:
+        -:   26:

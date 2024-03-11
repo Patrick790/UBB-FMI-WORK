@@ -1,0 +1,84 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/Car.h
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\LstMasina.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\LstMasina.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <iostream>
+        -:    4:#include <cassert>
+        -:    5:
+        -:    6:using std::string;
+        -:    7:using std::cout;
+        -:    8:
+        -:    9:class Car{
+        -:   10:    std::string registrationNumber;
+        -:   11:    std::string producer;
+        -:   12:    std::string model;
+        -:   13:    std::string type;
+        -:   14:
+        -:   15:public:
+        -:   16:
+        -:   17:    Car() = default;
+        -:   18:    Car(const string r, const string p, const string m, const string t) : registrationNumber{ r }, producer{ p }, model{ m }, type{ t }{}
+        -:   19:
+function _ZN3CarC1ERKS_ called 0 returned 0% blocks executed 0%
+    #####:   20:    Car(const Car& ot) : registrationNumber{ot.registrationNumber }, producer{ot.producer }, model{ot.model }, type{ot.type }{
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   20-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   20-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        -:   21:
+    #####:   22:    }
+    %%%%%:   22-block  0
+    $$$$$:   22-block  1
+call    0 never executed
+    $$$$$:   22-block  2
+call    1 never executed
+    $$$$$:   22-block  3
+call    2 never executed
+        -:   23:
+        -:   24:    string getRegistrationNumber() const {
+        -:   25:        return registrationNumber;
+        -:   26:    }
+        -:   27:
+        -:   28:    string getProducer() const {
+        -:   29:        return producer;
+        -:   30:    }
+        -:   31:
+        -:   32:    string getModel() const {
+        -:   33:        return model;
+        -:   34:    }
+        -:   35:
+        -:   36:    string getType() const {
+        -:   37:        return type;
+        -:   38:    }
+        -:   39:
+        -:   40:    void setRegistrationNumber(string newRegistrationNr);
+        -:   41:    void setProducer(string newProducer);
+        -:   42:    void setModel(string newModel);
+        -:   43:    void setType(string newType);
+        -:   44:
+        -:   45:    bool operator==(const Car& ot);
+        -:   46:
+        -:   47:
+        -:   48:
+        -:   49:};
+        -:   50:
+        -:   51:bool cmpRegistrationNumber(const Car& c1, const Car& c2);
+        -:   52:
+        -:   53:bool cmpType(const Car& c1, const Car& c2);
+        -:   54:
+        -:   55:bool cmpProducerModel(const Car& c1, const Car& c2);
+        -:   56:
+        -:   57://bool cmpProducer(const Car& c1, const Car& c2);
+        -:   58:
+        -:   59:void testDomain();

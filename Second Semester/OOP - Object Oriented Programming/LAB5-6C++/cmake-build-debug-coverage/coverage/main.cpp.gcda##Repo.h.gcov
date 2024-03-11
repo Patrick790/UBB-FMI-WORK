@@ -1,0 +1,74 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/Repo.h
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include "validator.h"
+        -:    4:
+        -:    5:#include <vector>
+        -:    6:#include <string>
+        -:    7:#include <ostream>
+        -:    8:#include <map>
+        -:    9:
+        -:   10:using std::vector;
+        -:   11:using std::string;
+        -:   12:using std::ostream;
+        -:   13:using namespace std;
+        -:   14:
+        -:   15:
+        -:   16:class CarRepo{
+        -:   17:
+        -:   18:private:
+        -:   19:
+        -:   20:    vector<Car> cars;
+        -:   21:
+        -:   22:public:
+        -:   23:
+function _ZN7CarRepoC1Ev called 10 returned 100% blocks executed 100%
+       10:   24:    CarRepo() = default;
+       10:   24-block  0
+call    0 returned 10
+        -:   25:
+        -:   26:    CarRepo(const CarRepo& ot) = delete;
+        -:   27:
+        -:   28:    //store car in repo
+        -:   29:    void store(const Car& c);
+        -:   30:
+        -:   31:    //remove car from repo
+        -:   32:    void remove(int poz);
+        -:   33:
+        -:   34:    //modify car
+        -:   35:    void modify(const Car& c, int poz);
+        -:   36:
+        -:   37:    /*
+        -:   38:	Cauta
+        -:   39:	arunca exceptie daca nu exista disciplina
+        -:   40:	*/
+        -:   41:    const Car& find(const string& registrationNumber);
+        -:   42:
+        -:   43:    bool exist(const Car& c);
+        -:   44:
+        -:   45:    vector<Car>& getAllCars();
+        -:   46:
+function _ZN7CarRepoD1Ev called 9 returned 100% blocks executed 100%
+        9:   47:    ~CarRepo() = default;
+        9:   47-block  0
+call    0 returned 9
+        -:   48:
+        -:   49:
+        -:   50:};
+        -:   51:/*
+        -:   52:Folosit pentru a semnala situatii exceptionale care pot aparea in repo
+        -:   53:*/
+        -:   54:class CarRepoException {
+        -:   55:private:
+        -:   56:    string errorMsg;
+        -:   57:public:
+        -:   58:    CarRepoException(string errorMsg) :errorMsg{ errorMsg } {};
+        -:   59:    string getErrorMessage() {
+        -:   60:        return this->errorMsg;
+        -:   61:    }
+        -:   62:};
+        -:   63:
+        -:   64:void testRepo();

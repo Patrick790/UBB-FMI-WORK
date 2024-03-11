@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1680013950 source:c:\users\ardel\onedrive\documents\codeblocks\lab3grafuri\main.cpp
+	<iostream>
+	<fstream>
+	<queue>
+	<vector>
+

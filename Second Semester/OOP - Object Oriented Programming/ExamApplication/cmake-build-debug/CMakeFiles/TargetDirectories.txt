@@ -1,0 +1,5 @@
+C:/Users/Ardelean/CLionProjects/SESIUNE/cmake-build-debug/CMakeFiles/SESIUNE.dir
+C:/Users/Ardelean/CLionProjects/SESIUNE/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ardelean/CLionProjects/SESIUNE/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Ardelean/CLionProjects/SESIUNE/cmake-build-debug/CMakeFiles/SESIUNE_autogen_timestamp_deps.dir
+C:/Users/Ardelean/CLionProjects/SESIUNE/cmake-build-debug/CMakeFiles/SESIUNE_autogen.dir

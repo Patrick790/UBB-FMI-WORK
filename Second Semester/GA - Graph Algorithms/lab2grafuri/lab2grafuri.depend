@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1678807053 source:c:\users\ardel\onedrive\documents\codeblocks\lab2grafuri\main.cpp
+	<iostream>
+	<fstream>
+

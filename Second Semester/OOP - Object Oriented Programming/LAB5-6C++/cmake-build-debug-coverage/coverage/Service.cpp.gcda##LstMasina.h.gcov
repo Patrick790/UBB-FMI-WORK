@@ -1,0 +1,36 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/LstMasina.h
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include <vector>
+        -:    4:#include <algorithm>
+        -:    5:#include <random>
+        -:    6:#include <chrono>
+        -:    7:
+        -:    8:using std::vector;
+        -:    9:
+        -:   10:class listaMasina {
+        -:   11:private:
+        -:   12:    vector<Car> spalatorieMasini;
+        -:   13:public:
+function _ZN11listaMasinaC1Ev called 0 returned 0% blocks executed 0%
+    #####:   14:    listaMasina() = default;
+    %%%%%:   14-block  0
+call    0 never executed
+        -:   15:
+        -:   16:
+        -:   17:
+        -:   18:    void addCartoLista(const Car& c);
+        -:   19:
+        -:   20:
+        -:   21:    void emptyList();
+        -:   22:
+        -:   23:
+        -:   24:    void addRandomMasini(vector<Car> originalMasini, int cate);
+        -:   25:
+        -:   26:    const vector<Car>& getallspalatorieMasini();
+        -:   27:
+        -:   28:
+        -:   29:};

@@ -1,0 +1,3 @@
+C:/Users/Ardelean/CLionProjects/Lab4-SDA/cmake-build-debug/CMakeFiles/Lab4_SDA.dir
+C:/Users/Ardelean/CLionProjects/Lab4-SDA/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ardelean/CLionProjects/Lab4-SDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir

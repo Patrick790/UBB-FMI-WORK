@@ -1,0 +1,2893 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/Service.cpp
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Service.h"
+        -:    2:#include <cassert>
+        -:    3:#include <functional>
+        -:    4:
+        -:    5:/* Adauga masina
+        -:    6: * :param: registrationNumber: string
+        -:    7: * :return: -
+        -:    8: */
+function _ZN10carService6addCarERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_S7_ called 29 returned 93% blocks executed 57%
+       29:    9:void carService::addCar(const string &registrationNumber, const string &producer, const string &model,
+        -:   10:                        const string &type) {
+       58:   11:    Car c{registrationNumber, producer, model, type};
+       29:   11-block  0
+call    0 returned 29
+branch  1 taken 29 (fallthrough)
+branch  2 taken 0 (throw)
+       29:   11-block  1
+call    3 returned 29
+branch  4 taken 29 (fallthrough)
+branch  5 taken 0 (throw)
+       29:   11-block  2
+call    6 returned 29
+branch  7 taken 29 (fallthrough)
+branch  8 taken 0 (throw)
+       29:   11-block  3
+call    9 returned 29
+branch 10 taken 29 (fallthrough)
+branch 11 taken 0 (throw)
+       29:   11-block  4
+call   12 returned 29
+branch 13 taken 29 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 29
+call   16 returned 29
+call   17 returned 29
+    $$$$$:   11-block  5
+    $$$$$:   11-block  6
+    $$$$$:   11-block  7
+    $$$$$:   11-block  8
+       29:   12:    carValidator::validate(c);
+call    0 returned 29
+branch  1 taken 28 (fallthrough)
+branch  2 taken 1 (throw)
+       28:   13:    repo.store(c);
+       28:   13-block  0
+call    0 returned 28
+branch  1 taken 27 (fallthrough)
+branch  2 taken 1 (throw)
+       29:   14:}
+       27:   14-block  0
+call    0 returned 27
+        2:   14-block  1
+call    1 returned 2
+        -:   15:
+        -:   16:/* Sterge masina
+        -:   17: * :param: poz: int
+        -:   18: * :return:-
+        -:   19: */
+function _ZN10carService9deleteCarERKi called 7 returned 100% blocks executed 78%
+        7:   20:void carService::deleteCar(const int &poz) {
+        7:   21:    auto dlt = repo.getAllCars()[poz];
+        7:   21-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   21-block  1
+call    3 returned 7
+call    4 returned 7
+branch  5 taken 7 (fallthrough)
+branch  6 taken 0 (throw)
+        7:   22:    repo.remove(poz);
+        7:   22-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   23:
+        7:   24:}
+        7:   24-block  0
+call    0 returned 7
+    $$$$$:   24-block  1
+call    1 never executed
+        -:   25:
+        -:   26:/* Modifica masina
+        -:   27: * :param: poz: int
+        -:   28: * :param: registrationNumber: string
+        -:   29: * :param: producer: string
+        -:   30: * :param: model: string
+        -:   31: * :param: type: string
+        -:   32: * :return: -
+        -:   33: */
+function _ZN10carService9modifyCarERKiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_S9_S9_ called 1 returned 100% blocks executed 53%
+        1:   34:void carService::modifyCar(const int &poz, const string &registrationNumber, const string &producer,
+        -:   35:                           const string &model, const string &type) {
+        2:   36:    Car c{registrationNumber, producer, model, type};
+        1:   36-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   36-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   36-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   36-block  4
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+call   16 returned 1
+call   17 returned 1
+    $$$$$:   36-block  5
+    $$$$$:   36-block  6
+    $$$$$:   36-block  7
+    $$$$$:   36-block  8
+        1:   37:    carValidator::validate(c);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   38:
+        1:   39:    auto di = repo.getAllCars()[poz];
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   39-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   40:    repo.modify(c, poz);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   41:
+        1:   42:}
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   42-block  1
+call    2 never executed
+    $$$$$:   42-block  2
+call    3 never executed
+        -:   43:
+        -:   44:/* Cauta masina dupa nr de inmatriculare
+        -:   45: * :param: registrationNumber: string
+        -:   46: * :return: masina cu nr de inmatriculare dat
+        -:   47: */
+function _ZN10carService4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 100%
+        2:   48:const Car &carService::find(const string& registrationNumber) {
+        2:   49:    return repo.find(registrationNumber);
+        2:   49-block  0
+call    0 returned 1
+        -:   50:
+        -:   51:}
+        -:   52:
+        -:   53:/* Filtreaza dupa producator
+        -:   54: * :param: producer: string
+        -:   55: * :return: lista de masini filtrata
+        -:   56: */
+function _ZN10carService14filterProducerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 73%
+        1:   57:vector<Car> carService::filterProducer(const string& producer) {
+        1:   58:    const vector<Car>& cars = getAllCars();
+        1:   58-block  0
+call    0 returned 1
+        1:   59:    vector<Car> filteredCars;
+call    0 returned 1
+        1:   60:    std::copy_if(cars.begin(), cars.end(), back_inserter(filteredCars),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   60-block  1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   60-block  2
+call   11 returned 1
+    $$$$$:   60-block  3
+call   12 never executed
+    $$$$$:   60-block  4
+function _ZZN10carService14filterProducerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK3CarE_clESA_ called 4 returned 100% blocks executed 100%
+        4:   61:                 [producer](const Car& c){
+        4:   62:                      return c.getProducer() == producer;
+        4:   62-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+        -:   63:    });
+        1:   64:    return filteredCars;
+        1:   64-block  0
+        -:   65:
+    =====:   66:}
+    $$$$$:   66-block  0
+call    0 never executed
+        -:   67:
+        -:   68:/* Filtreaza dupa tip
+        -:   69: * :param: type: string
+        -:   70: * :return: lista de masini filtrata
+        -:   71: */
+function _ZN10carService10filterTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 73%
+        1:   72:vector<Car> carService::filterType(const string& type) {
+        1:   73:    const vector<Car>& cars = getAllCars();
+        1:   73-block  0
+call    0 returned 1
+        1:   74:    vector<Car> filteredCars;
+call    0 returned 1
+        1:   75:    std::copy_if(cars.begin(), cars.end(), back_inserter(filteredCars),
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   75-block  2
+call   11 returned 1
+    $$$$$:   75-block  3
+call   12 never executed
+    $$$$$:   75-block  4
+function _ZZN10carService10filterTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK3CarE_clESA_ called 4 returned 100% blocks executed 100%
+        4:   76:                 [type](const Car& c){
+        4:   77:                     return c.getType() == type;
+        4:   77-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+        -:   78:                 });
+        1:   79:    return filteredCars;
+        1:   79-block  0
+        -:   80:
+    =====:   81:}
+    $$$$$:   81-block  0
+call    0 never executed
+        -:   82:
+        -:   83:
+function _ZN10carService24sortByRegistrationNumberEv called 2 returned 100% blocks executed 89%
+        2:   84:vector<Car> carService::sortByRegistrationNumber() {
+        2:   85:    auto sortedCopy = repo.getAllCars();
+        2:   85-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   86:    sort(sortedCopy.begin(), sortedCopy.end(), cmpRegistrationNumber);
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   87:    return sortedCopy;
+        2:   87-block  0
+        2:   87-block  1
+        -:   88:
+    =====:   89:}
+    $$$$$:   89-block  0
+call    0 never executed
+        -:   90:
+function _ZN10carService10sortByTypeEv called 1 returned 100% blocks executed 89%
+        1:   91:vector<Car> carService::sortByType() {
+        1:   92:    auto sortedCopy = repo.getAllCars();
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   93:    sort(sortedCopy.begin(), sortedCopy.end(), cmpType);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   94:    return sortedCopy;
+        1:   94-block  0
+        1:   94-block  1
+    =====:   95:}
+    $$$$$:   95-block  0
+call    0 never executed
+        -:   96:
+function _ZN10carService19sortByProducerModelEv called 1 returned 100% blocks executed 89%
+        1:   97:vector<Car> carService::sortByProducerModel() {
+        1:   98:    auto sortedCopy = repo.getAllCars();
+        1:   98-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   99:    sort(sortedCopy.begin(), sortedCopy.end(), cmpProducerModel);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  100:    return sortedCopy;
+        1:  100-block  0
+        1:  100-block  1
+    =====:  101:}
+    $$$$$:  101-block  0
+call    0 never executed
+        -:  102:
+function _ZN10carService10addToListaENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:  103:void carService::addToLista(string registrationNumber) {
+        1:  104:    const auto& car = repo.find(registrationNumber);
+        1:  104-block  0
+call    0 returned 1
+        1:  105:    currentList.addCartoLista(car);
+call    0 returned 1
+        1:  106:}
+        -:  107:
+function _ZN10carService22addRandomtoListaMasinaEi called 2 returned 100% blocks executed 82%
+        2:  108:int carService::addRandomtoListaMasina(int cate) {
+        2:  109:    currentList.addRandomMasini(this->getAllCars(), cate);
+        2:  109-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:  109-block  1
+call    5 returned 2
+    $$$$$:  109-block  2
+call    6 never executed
+        2:  110:    return currentList.getallspalatorieMasini().size();
+call    0 returned 2
+call    1 returned 2
+        2:  110-block  0
+        -:  111:}
+        -:  112:
+function _ZN10carService16emptyListaMasinaEv called 2 returned 100% blocks executed 100%
+        2:  113:void carService::emptyListaMasina() {
+        2:  114:    currentList.emptyList();
+        2:  114-block  0
+call    0 returned 2
+        2:  115:}
+        -:  116:
+        -:  117:
+function _ZN10carService14getListaMasiniEv called 4 returned 100% blocks executed 100%
+        4:  118:const vector<Car>& carService::getListaMasini() {
+        4:  119:    return currentList.getallspalatorieMasini();
+        4:  119-block  0
+call    0 returned 4
+        -:  120:}
+        -:  121:
+        -:  122:
+function _Z14testAddServicev called 1 returned 100% blocks executed 54%
+        1:  123:void testAddService(){
+        1:  124:    CarRepo testRepo;
+        1:  124-block  0
+call    0 returned 1
+        -:  125:    carValidator testVal;
+        1:  126:    carService testService{testRepo, testVal};
+call    0 returned 1
+        -:  127:
+        1:  128:    testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  128-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  128-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  128-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  128-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  128-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  128-block  5
+call   27 never executed
+    $$$$$:  128-block  6
+    $$$$$:  128-block  7
+call   28 never executed
+    $$$$$:  128-block  8
+    $$$$$:  128-block  9
+call   29 never executed
+    $$$$$:  128-block 10
+    $$$$$:  128-block 11
+call   30 never executed
+    $$$$$:  128-block 12
+    $$$$$:  128-block 13
+call   31 never executed
+    $$$$$:  128-block 14
+    $$$$$:  128-block 15
+call   32 never executed
+    $$$$$:  128-block 16
+    $$$$$:  128-block 17
+call   33 never executed
+    $$$$$:  128-block 18
+    $$$$$:  128-block 19
+call   34 never executed
+    $$$$$:  128-block 20
+        1:  129:    testService.addCar("MM 13 VSO", "Opel", "Astra", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  129-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  129-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  129-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  129-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  129-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  129-block  5
+call   27 never executed
+    $$$$$:  129-block  6
+    $$$$$:  129-block  7
+call   28 never executed
+    $$$$$:  129-block  8
+    $$$$$:  129-block  9
+call   29 never executed
+    $$$$$:  129-block 10
+    $$$$$:  129-block 11
+call   30 never executed
+    $$$$$:  129-block 12
+    $$$$$:  129-block 13
+call   31 never executed
+    $$$$$:  129-block 14
+    $$$$$:  129-block 15
+call   32 never executed
+    $$$$$:  129-block 16
+    $$$$$:  129-block 17
+call   33 never executed
+    $$$$$:  129-block 18
+    $$$$$:  129-block 19
+call   34 never executed
+    $$$$$:  129-block 20
+        1:  130:    testService.addCar("CJ 78 PSH", "Skoda", "Octavia", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  130-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  130-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  130-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  130-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  130-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  130-block  5
+call   27 never executed
+    $$$$$:  130-block  6
+    $$$$$:  130-block  7
+call   28 never executed
+    $$$$$:  130-block  8
+    $$$$$:  130-block  9
+call   29 never executed
+    $$$$$:  130-block 10
+    $$$$$:  130-block 11
+call   30 never executed
+    $$$$$:  130-block 12
+    $$$$$:  130-block 13
+call   31 never executed
+    $$$$$:  130-block 14
+    $$$$$:  130-block 15
+call   32 never executed
+    $$$$$:  130-block 16
+    $$$$$:  130-block 17
+call   33 never executed
+    $$$$$:  130-block 18
+    $$$$$:  130-block 19
+call   34 never executed
+    $$$$$:  130-block 20
+        -:  131:
+       1*:  132:    assert(testService.getAllCars().size() == 3);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  132-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  132-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  132-block  2
+    %%%%%:  132-block  3
+        -:  133:
+        -:  134:    try{
+       9*:  135:        testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+        1:  135-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  135-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  135-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  135-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  135-block  4
+call   16 returned 1
+branch 17 taken 0 (fallthrough)
+branch 18 taken 1 (throw)
+    %%%%%:  135-block  5
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  135-block  6
+call   27 returned 1
+        1:  135-block  7
+        1:  135-block  8
+call   28 returned 1
+        1:  135-block  9
+        1:  135-block 10
+call   29 returned 1
+        1:  135-block 11
+        1:  135-block 12
+call   30 returned 1
+        1:  135-block 13
+        1:  135-block 14
+call   31 returned 1
+        1:  135-block 15
+        1:  135-block 16
+call   32 returned 1
+        1:  135-block 17
+        1:  135-block 18
+call   33 returned 1
+        1:  135-block 19
+        1:  135-block 20
+call   34 returned 1
+        1:  135-block 21
+        -:  136:
+        -:  137:    }
+        1:  138:    catch (CarRepoException&){
+        1:  138-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  138-block  1
+call    2 returned 1
+        -:  139:        assert(true);
+        1:  140:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  141:
+        -:  142:    try{
+       9*:  143:        testService.addCar("CJ 82 JOY", "", "V50", "Combi");
+        1:  143-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  143-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  143-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  143-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  143-block  4
+call   16 returned 1
+branch 17 taken 0 (fallthrough)
+branch 18 taken 1 (throw)
+    %%%%%:  143-block  5
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  143-block  6
+call   27 returned 1
+        1:  143-block  7
+        1:  143-block  8
+call   28 returned 1
+        1:  143-block  9
+        1:  143-block 10
+call   29 returned 1
+        1:  143-block 11
+        1:  143-block 12
+call   30 returned 1
+        1:  143-block 13
+        1:  143-block 14
+call   31 returned 1
+        1:  143-block 15
+        1:  143-block 16
+call   32 returned 1
+        1:  143-block 17
+        1:  143-block 18
+call   33 returned 1
+        1:  143-block 19
+        1:  143-block 20
+call   34 returned 1
+        1:  143-block 21
+        -:  144:
+        -:  145:    }
+        1:  146:    catch (validateException& ve)
+        1:  146-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  146-block  1
+call    2 returned 1
+        -:  147:    {
+        1:  148:        assert(ve.getErrorMessages() == "Invalid producer!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  148-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  148-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  148-block  2
+    $$$$$:  148-block  3
+        1:  148-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  148-block  5
+call   11 returned 1
+    $$$$$:  148-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  148-block  7
+call   14 never executed
+    $$$$$:  148-block  8
+        1:  149:    }
+        1:  149-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  149-block  1
+call    3 never executed
+        1:  150:    testService.deleteCar(0);
+        1:  150-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  150-block  1
+        -:  151:
+        1:  152:    testService.modifyCar(1, "MM 13 VSO", "Skoda" , "Octavia", "Sedan");
+        1:  152-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  152-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  152-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  152-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  152-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  152-block  5
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  152-block  6
+    $$$$$:  152-block  7
+call   27 never executed
+    $$$$$:  152-block  8
+    $$$$$:  152-block  9
+call   28 never executed
+    $$$$$:  152-block 10
+    $$$$$:  152-block 11
+call   29 never executed
+    $$$$$:  152-block 12
+    $$$$$:  152-block 13
+call   30 never executed
+    $$$$$:  152-block 14
+    $$$$$:  152-block 15
+call   31 never executed
+    $$$$$:  152-block 16
+    $$$$$:  152-block 17
+call   32 never executed
+    $$$$$:  152-block 18
+    $$$$$:  152-block 19
+call   33 never executed
+    $$$$$:  152-block 20
+    $$$$$:  152-block 21
+call   34 never executed
+    $$$$$:  152-block 22
+        1:  153:}
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  153-block  0
+call    2 never executed
+    $$$$$:  153-block  1
+call    3 never executed
+        -:  154:
+function _Z15testFindServicev called 1 returned 100% blocks executed 47%
+        1:  155:void testFindService() {
+        1:  156:    CarRepo testRepo;
+        1:  156-block  0
+call    0 returned 1
+        -:  157:    carValidator testVal;
+        1:  158:    carService testService{testRepo, testVal};
+call    0 returned 1
+        -:  159:
+        1:  160:    testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  160-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  160-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  160-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  160-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  160-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  160-block  5
+call   27 never executed
+    $$$$$:  160-block  6
+    $$$$$:  160-block  7
+call   28 never executed
+    $$$$$:  160-block  8
+    $$$$$:  160-block  9
+call   29 never executed
+    $$$$$:  160-block 10
+    $$$$$:  160-block 11
+call   30 never executed
+    $$$$$:  160-block 12
+    $$$$$:  160-block 13
+call   31 never executed
+    $$$$$:  160-block 14
+    $$$$$:  160-block 15
+call   32 never executed
+    $$$$$:  160-block 16
+    $$$$$:  160-block 17
+call   33 never executed
+    $$$$$:  160-block 18
+    $$$$$:  160-block 19
+call   34 never executed
+    $$$$$:  160-block 20
+        1:  161:    testService.addCar("MM 13 VSO", "Opel", "Astra", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  161-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  161-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  161-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  161-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  161-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  161-block  5
+call   27 never executed
+    $$$$$:  161-block  6
+    $$$$$:  161-block  7
+call   28 never executed
+    $$$$$:  161-block  8
+    $$$$$:  161-block  9
+call   29 never executed
+    $$$$$:  161-block 10
+    $$$$$:  161-block 11
+call   30 never executed
+    $$$$$:  161-block 12
+    $$$$$:  161-block 13
+call   31 never executed
+    $$$$$:  161-block 14
+    $$$$$:  161-block 15
+call   32 never executed
+    $$$$$:  161-block 16
+    $$$$$:  161-block 17
+call   33 never executed
+    $$$$$:  161-block 18
+    $$$$$:  161-block 19
+call   34 never executed
+    $$$$$:  161-block 20
+        1:  162:    testService.addCar("CJ 78 PSH", "Skoda", "Octavia", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  162-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  162-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  162-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  162-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  162-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  162-block  5
+call   27 never executed
+    $$$$$:  162-block  6
+    $$$$$:  162-block  7
+call   28 never executed
+    $$$$$:  162-block  8
+    $$$$$:  162-block  9
+call   29 never executed
+    $$$$$:  162-block 10
+    $$$$$:  162-block 11
+call   30 never executed
+    $$$$$:  162-block 12
+    $$$$$:  162-block 13
+call   31 never executed
+    $$$$$:  162-block 14
+    $$$$$:  162-block 15
+call   32 never executed
+    $$$$$:  162-block 16
+    $$$$$:  162-block 17
+call   33 never executed
+    $$$$$:  162-block 18
+    $$$$$:  162-block 19
+call   34 never executed
+    $$$$$:  162-block 20
+        -:  163:
+        -:  164:    // Find an existing car
+        1:  165:    const Car& foundCar = testService.find("CJ 21 NEO");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  165-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  165-block  1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  165-block  2
+call    9 never executed
+    $$$$$:  165-block  3
+    $$$$$:  165-block  4
+call   10 never executed
+    $$$$$:  165-block  5
+       1*:  166:    assert(foundCar.getRegistrationNumber() == "CJ 21 NEO");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  166-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  166-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  166-block  2
+    %%%%%:  166-block  3
+        1:  166-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  166-block  5
+call   11 returned 1
+    $$$$$:  166-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  166-block  7
+call   14 never executed
+    $$$$$:  166-block  8
+       1*:  167:    assert(foundCar.getProducer() == "Volvo");
+        1:  167-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  167-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  167-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  167-block  3
+    %%%%%:  167-block  4
+        1:  167-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  167-block  6
+call   11 returned 1
+    $$$$$:  167-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  167-block  8
+call   14 never executed
+    $$$$$:  167-block  9
+       1*:  168:    assert(foundCar.getModel() == "V50");
+        1:  168-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  168-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  168-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  168-block  3
+    %%%%%:  168-block  4
+        1:  168-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  168-block  6
+call   11 returned 1
+    $$$$$:  168-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  168-block  8
+call   14 never executed
+    $$$$$:  168-block  9
+       1*:  169:    assert(foundCar.getType() == "Combi");
+        1:  169-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  169-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  169-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  169-block  3
+    %%%%%:  169-block  4
+        1:  169-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  169-block  6
+call   11 returned 1
+    $$$$$:  169-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  169-block  8
+call   14 never executed
+    $$$$$:  169-block  9
+        -:  170:
+        -:  171:    // Find a non-existing car
+        -:  172:    try {
+       3*:  173:        testService.find("CJ 99 DNG");
+        1:  173-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  173-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  173-block  2
+call    7 never executed
+call    8 never executed
+        1:  173-block  3
+call    9 returned 1
+        1:  173-block  4
+        1:  173-block  5
+call   10 returned 1
+        1:  173-block  6
+        -:  174:    }
+        1:  175:    catch (CarRepoException &) {
+        1:  175-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  175-block  1
+call    2 returned 1
+        -:  176:        assert(true);
+        1:  177:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  178:}
+        1:  178-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  178-block  1
+call    2 never executed
+    $$$$$:  178-block  2
+call    3 never executed
+        -:  179:
+function _Z17testFilterServicev called 1 returned 100% blocks executed 43%
+        1:  180:void testFilterService() {
+        1:  181:    CarRepo testRepo;
+        1:  181-block  0
+call    0 returned 1
+        -:  182:    carValidator testVal;
+        1:  183:    carService testService{testRepo, testVal};
+call    0 returned 1
+        -:  184:
+        1:  185:    testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  185-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  185-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  185-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  185-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  185-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  185-block  5
+call   27 never executed
+    $$$$$:  185-block  6
+    $$$$$:  185-block  7
+call   28 never executed
+    $$$$$:  185-block  8
+    $$$$$:  185-block  9
+call   29 never executed
+    $$$$$:  185-block 10
+    $$$$$:  185-block 11
+call   30 never executed
+    $$$$$:  185-block 12
+    $$$$$:  185-block 13
+call   31 never executed
+    $$$$$:  185-block 14
+    $$$$$:  185-block 15
+call   32 never executed
+    $$$$$:  185-block 16
+    $$$$$:  185-block 17
+call   33 never executed
+    $$$$$:  185-block 18
+    $$$$$:  185-block 19
+call   34 never executed
+    $$$$$:  185-block 20
+        1:  186:    testService.addCar("NT 23 JOR", "Volvo", "XC-90", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  186-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  186-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  186-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  186-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  186-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  186-block  5
+call   27 never executed
+    $$$$$:  186-block  6
+    $$$$$:  186-block  7
+call   28 never executed
+    $$$$$:  186-block  8
+    $$$$$:  186-block  9
+call   29 never executed
+    $$$$$:  186-block 10
+    $$$$$:  186-block 11
+call   30 never executed
+    $$$$$:  186-block 12
+    $$$$$:  186-block 13
+call   31 never executed
+    $$$$$:  186-block 14
+    $$$$$:  186-block 15
+call   32 never executed
+    $$$$$:  186-block 16
+    $$$$$:  186-block 17
+call   33 never executed
+    $$$$$:  186-block 18
+    $$$$$:  186-block 19
+call   34 never executed
+    $$$$$:  186-block 20
+        1:  187:    testService.addCar("CJ 77 SUS", "Mazda", "6", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  187-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  187-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  187-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  187-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  187-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  187-block  5
+call   27 never executed
+    $$$$$:  187-block  6
+    $$$$$:  187-block  7
+call   28 never executed
+    $$$$$:  187-block  8
+    $$$$$:  187-block  9
+call   29 never executed
+    $$$$$:  187-block 10
+    $$$$$:  187-block 11
+call   30 never executed
+    $$$$$:  187-block 12
+    $$$$$:  187-block 13
+call   31 never executed
+    $$$$$:  187-block 14
+    $$$$$:  187-block 15
+call   32 never executed
+    $$$$$:  187-block 16
+    $$$$$:  187-block 17
+call   33 never executed
+    $$$$$:  187-block 18
+    $$$$$:  187-block 19
+call   34 never executed
+    $$$$$:  187-block 20
+        1:  188:    testService.addCar("MM 88 JOS", "Skoda", "Superb", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  188-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  188-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  188-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  188-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  188-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  188-block  5
+call   27 never executed
+    $$$$$:  188-block  6
+    $$$$$:  188-block  7
+call   28 never executed
+    $$$$$:  188-block  8
+    $$$$$:  188-block  9
+call   29 never executed
+    $$$$$:  188-block 10
+    $$$$$:  188-block 11
+call   30 never executed
+    $$$$$:  188-block 12
+    $$$$$:  188-block 13
+call   31 never executed
+    $$$$$:  188-block 14
+    $$$$$:  188-block 15
+call   32 never executed
+    $$$$$:  188-block 16
+    $$$$$:  188-block 17
+call   33 never executed
+    $$$$$:  188-block 18
+    $$$$$:  188-block 19
+call   34 never executed
+    $$$$$:  188-block 20
+        -:  189:
+        2:  190:    vector<Car> carsByProducer = testService.filterProducer("Volvo");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  190-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  190-block  1
+    $$$$$:  190-block  2
+       1*:  191:    assert(carsByProducer.size() == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  191-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        1:  191-block  1
+    %%%%%:  191-block  2
+        2:  192:    vector<Car> carsByType = testService.filterType("Combi");
+        1:  192-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  192-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  192-block  2
+    $$$$$:  192-block  3
+       1*:  193:    assert(carsByType.size() == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  193-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        1:  193-block  1
+    %%%%%:  193-block  2
+        -:  194:
+        1:  195:}
+        1:  195-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  195-block  1
+call    4 never executed
+    $$$$$:  195-block  2
+call    5 never executed
+    $$$$$:  195-block  3
+call    6 never executed
+    $$$$$:  195-block  4
+call    7 never executed
+        -:  196:
+function _Z15testSortServicev called 1 returned 100% blocks executed 48%
+        1:  197:void testSortService(){
+        1:  198:    CarRepo testRepo;
+        1:  198-block  0
+call    0 returned 1
+        -:  199:    carValidator testVal;
+        1:  200:    carService testService{testRepo, testVal};
+call    0 returned 1
+        -:  201:
+        1:  202:    testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  202-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  202-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  202-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  202-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  202-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  202-block  5
+call   27 never executed
+    $$$$$:  202-block  6
+    $$$$$:  202-block  7
+call   28 never executed
+    $$$$$:  202-block  8
+    $$$$$:  202-block  9
+call   29 never executed
+    $$$$$:  202-block 10
+    $$$$$:  202-block 11
+call   30 never executed
+    $$$$$:  202-block 12
+    $$$$$:  202-block 13
+call   31 never executed
+    $$$$$:  202-block 14
+    $$$$$:  202-block 15
+call   32 never executed
+    $$$$$:  202-block 16
+    $$$$$:  202-block 17
+call   33 never executed
+    $$$$$:  202-block 18
+    $$$$$:  202-block 19
+call   34 never executed
+    $$$$$:  202-block 20
+        1:  203:    testService.addCar("NT 23 JOR", "Volvo", "XC-90", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  203-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  203-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  203-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  203-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  203-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  203-block  5
+call   27 never executed
+    $$$$$:  203-block  6
+    $$$$$:  203-block  7
+call   28 never executed
+    $$$$$:  203-block  8
+    $$$$$:  203-block  9
+call   29 never executed
+    $$$$$:  203-block 10
+    $$$$$:  203-block 11
+call   30 never executed
+    $$$$$:  203-block 12
+    $$$$$:  203-block 13
+call   31 never executed
+    $$$$$:  203-block 14
+    $$$$$:  203-block 15
+call   32 never executed
+    $$$$$:  203-block 16
+    $$$$$:  203-block 17
+call   33 never executed
+    $$$$$:  203-block 18
+    $$$$$:  203-block 19
+call   34 never executed
+    $$$$$:  203-block 20
+        1:  204:    testService.addCar("CJ 77 SUS", "Mazda", "6", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  204-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  204-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  204-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  204-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  204-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  204-block  5
+call   27 never executed
+    $$$$$:  204-block  6
+    $$$$$:  204-block  7
+call   28 never executed
+    $$$$$:  204-block  8
+    $$$$$:  204-block  9
+call   29 never executed
+    $$$$$:  204-block 10
+    $$$$$:  204-block 11
+call   30 never executed
+    $$$$$:  204-block 12
+    $$$$$:  204-block 13
+call   31 never executed
+    $$$$$:  204-block 14
+    $$$$$:  204-block 15
+call   32 never executed
+    $$$$$:  204-block 16
+    $$$$$:  204-block 17
+call   33 never executed
+    $$$$$:  204-block 18
+    $$$$$:  204-block 19
+call   34 never executed
+    $$$$$:  204-block 20
+        1:  205:    testService.addCar("MM 88 JOS", "Skoda", "Superb", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  205-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  205-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  205-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  205-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  205-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  205-block  5
+call   27 never executed
+    $$$$$:  205-block  6
+    $$$$$:  205-block  7
+call   28 never executed
+    $$$$$:  205-block  8
+    $$$$$:  205-block  9
+call   29 never executed
+    $$$$$:  205-block 10
+    $$$$$:  205-block 11
+call   30 never executed
+    $$$$$:  205-block 12
+    $$$$$:  205-block 13
+call   31 never executed
+    $$$$$:  205-block 14
+    $$$$$:  205-block 15
+call   32 never executed
+    $$$$$:  205-block 16
+    $$$$$:  205-block 17
+call   33 never executed
+    $$$$$:  205-block 18
+    $$$$$:  205-block 19
+call   34 never executed
+    $$$$$:  205-block 20
+        1:  206:    testService.addCar("CJ 23 APA", "Tesla", "Model 3", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  206-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  206-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  206-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  206-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  206-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  206-block  5
+call   27 never executed
+    $$$$$:  206-block  6
+    $$$$$:  206-block  7
+call   28 never executed
+    $$$$$:  206-block  8
+    $$$$$:  206-block  9
+call   29 never executed
+    $$$$$:  206-block 10
+    $$$$$:  206-block 11
+call   30 never executed
+    $$$$$:  206-block 12
+    $$$$$:  206-block 13
+call   31 never executed
+    $$$$$:  206-block 14
+    $$$$$:  206-block 15
+call   32 never executed
+    $$$$$:  206-block 16
+    $$$$$:  206-block 17
+call   33 never executed
+    $$$$$:  206-block 18
+    $$$$$:  206-block 19
+call   34 never executed
+    $$$$$:  206-block 20
+        1:  207:    testService.addCar("SJ 65 URS", "Renault", "Austral", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  207-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  207-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  207-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  207-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  207-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  207-block  5
+call   27 never executed
+    $$$$$:  207-block  6
+    $$$$$:  207-block  7
+call   28 never executed
+    $$$$$:  207-block  8
+    $$$$$:  207-block  9
+call   29 never executed
+    $$$$$:  207-block 10
+    $$$$$:  207-block 11
+call   30 never executed
+    $$$$$:  207-block 12
+    $$$$$:  207-block 13
+call   31 never executed
+    $$$$$:  207-block 14
+    $$$$$:  207-block 15
+call   32 never executed
+    $$$$$:  207-block 16
+    $$$$$:  207-block 17
+call   33 never executed
+    $$$$$:  207-block 18
+    $$$$$:  207-block 19
+call   34 never executed
+    $$$$$:  207-block 20
+        -:  208:
+        1:  209:    vector<Car> sortedByRegistrationNumber = testService.sortByRegistrationNumber();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  210:    assert(sortedByRegistrationNumber[0].getRegistrationNumber() == "CJ 21 NEO");
+        1:  210-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  210-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  210-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  210-block  3
+    %%%%%:  210-block  4
+        1:  210-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  210-block  6
+call   12 returned 1
+    $$$$$:  210-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  210-block  8
+call   15 never executed
+    $$$$$:  210-block  9
+       1*:  211:    assert(sortedByRegistrationNumber[1].getRegistrationNumber() == "CJ 23 APA");
+        1:  211-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  211-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  211-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  211-block  3
+    %%%%%:  211-block  4
+        1:  211-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  211-block  6
+call   12 returned 1
+    $$$$$:  211-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  211-block  8
+call   15 never executed
+    $$$$$:  211-block  9
+       1*:  212:    assert(sortedByRegistrationNumber[2].getRegistrationNumber() == "CJ 77 SUS");
+        1:  212-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  212-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  212-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  212-block  3
+    %%%%%:  212-block  4
+        1:  212-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  212-block  6
+call   12 returned 1
+    $$$$$:  212-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  212-block  8
+call   15 never executed
+    $$$$$:  212-block  9
+       1*:  213:    assert(sortedByRegistrationNumber[5].getRegistrationNumber() == "SJ 65 URS");
+        1:  213-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  213-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  213-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  213-block  3
+    %%%%%:  213-block  4
+        1:  213-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  213-block  6
+call   12 returned 1
+    $$$$$:  213-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  213-block  8
+call   15 never executed
+    $$$$$:  213-block  9
+        -:  214:
+        1:  215:    vector<Car> sortedByType = testService.sortByType();
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  216:    assert(sortedByType[0].getRegistrationNumber() == "CJ 21 NEO");
+        1:  216-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  216-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  216-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  216-block  3
+    %%%%%:  216-block  4
+        1:  216-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  216-block  6
+call   12 returned 1
+    $$$$$:  216-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  216-block  8
+call   15 never executed
+    $$$$$:  216-block  9
+       1*:  217:    assert(sortedByType[0].getProducer() == "Volvo");
+        1:  217-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  217-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  217-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  217-block  3
+    %%%%%:  217-block  4
+        1:  217-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  217-block  6
+call   12 returned 1
+    $$$$$:  217-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  217-block  8
+call   15 never executed
+    $$$$$:  217-block  9
+       1*:  218:    assert(sortedByType[0].getModel() == "V50");
+        1:  218-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  218-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  218-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  218-block  3
+    %%%%%:  218-block  4
+        1:  218-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  218-block  6
+call   12 returned 1
+    $$$$$:  218-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  218-block  8
+call   15 never executed
+    $$$$$:  218-block  9
+        -:  219:
+       1*:  220:    assert(sortedByType[2].getRegistrationNumber() == "NT 23 JOR");
+        1:  220-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  220-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  220-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  220-block  3
+    %%%%%:  220-block  4
+        1:  220-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  220-block  6
+call   12 returned 1
+    $$$$$:  220-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  220-block  8
+call   15 never executed
+    $$$$$:  220-block  9
+       1*:  221:    assert(sortedByType[2].getProducer() == "Volvo");
+        1:  221-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  221-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  221-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  221-block  3
+    %%%%%:  221-block  4
+        1:  221-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  221-block  6
+call   12 returned 1
+    $$$$$:  221-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  221-block  8
+call   15 never executed
+    $$$$$:  221-block  9
+       1*:  222:    assert(sortedByType[2].getModel() == "XC-90");
+        1:  222-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  222-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  222-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  222-block  3
+    %%%%%:  222-block  4
+        1:  222-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  222-block  6
+call   12 returned 1
+    $$$$$:  222-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  222-block  8
+call   15 never executed
+    $$$$$:  222-block  9
+        -:  223:
+       1*:  224:    assert(sortedByType[5].getRegistrationNumber() == "CJ 23 APA");
+        1:  224-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  224-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  224-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  224-block  3
+    %%%%%:  224-block  4
+        1:  224-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  224-block  6
+call   12 returned 1
+    $$$$$:  224-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  224-block  8
+call   15 never executed
+    $$$$$:  224-block  9
+       1*:  225:    assert(sortedByType[5].getProducer() == "Tesla");
+        1:  225-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  225-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  225-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  225-block  3
+    %%%%%:  225-block  4
+        1:  225-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  225-block  6
+call   12 returned 1
+    $$$$$:  225-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  225-block  8
+call   15 never executed
+    $$$$$:  225-block  9
+       1*:  226:    assert(sortedByType[5].getModel() == "Model 3");
+        1:  226-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  226-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  226-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  226-block  3
+    %%%%%:  226-block  4
+        1:  226-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  226-block  6
+call   12 returned 1
+    $$$$$:  226-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  226-block  8
+call   15 never executed
+    $$$$$:  226-block  9
+        -:  227:
+        1:  228:    vector<Car> sortedByProducerModel = testService.sortByProducerModel();
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  229:    assert(sortedByProducerModel[0].getRegistrationNumber() == "CJ 77 SUS");
+        1:  229-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  229-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  229-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  229-block  3
+    %%%%%:  229-block  4
+        1:  229-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  229-block  6
+call   12 returned 1
+    $$$$$:  229-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  229-block  8
+call   15 never executed
+    $$$$$:  229-block  9
+       1*:  230:    assert(sortedByProducerModel[0].getType() == "Combi");
+        1:  230-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  230-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  230-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  230-block  3
+    %%%%%:  230-block  4
+        1:  230-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  230-block  6
+call   12 returned 1
+    $$$$$:  230-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  230-block  8
+call   15 never executed
+    $$$$$:  230-block  9
+        -:  231:
+       1*:  232:    assert(sortedByProducerModel[2].getRegistrationNumber() == "MM 88 JOS");
+        1:  232-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  232-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  232-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  232-block  3
+    %%%%%:  232-block  4
+        1:  232-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  232-block  6
+call   12 returned 1
+    $$$$$:  232-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  232-block  8
+call   15 never executed
+    $$$$$:  232-block  9
+       1*:  233:    assert(sortedByProducerModel[2].getType() == "Sedan");
+        1:  233-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  233-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  233-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  233-block  3
+    %%%%%:  233-block  4
+        1:  233-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  233-block  6
+call   12 returned 1
+    $$$$$:  233-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  233-block  8
+call   15 never executed
+    $$$$$:  233-block  9
+        -:  234:
+       1*:  235:    assert(sortedByProducerModel[5].getRegistrationNumber() == "NT 23 JOR");
+        1:  235-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  235-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  235-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  235-block  3
+    %%%%%:  235-block  4
+        1:  235-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  235-block  6
+call   12 returned 1
+    $$$$$:  235-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  235-block  8
+call   15 never executed
+    $$$$$:  235-block  9
+       1*:  236:    assert(sortedByProducerModel[5].getType() == "SUV");
+        1:  236-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  236-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:  236-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        1:  236-block  3
+    %%%%%:  236-block  4
+        1:  236-block  5
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  236-block  6
+call   12 returned 1
+    $$$$$:  236-block  7
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  236-block  8
+call   15 never executed
+    $$$$$:  236-block  9
+        -:  237:
+        1:  238:    testService.deleteCar(0);
+        1:  238-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  238-block  1
+        1:  239:    testService.deleteCar(1);
+        1:  239-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  239-block  1
+        1:  240:    testService.deleteCar(2);
+        1:  240-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  240-block  1
+        1:  241:    testService.deleteCar(3);
+        1:  241-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  241-block  1
+        1:  242:    testService.deleteCar(4);
+        1:  242-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  242-block  1
+        1:  243:    testService.deleteCar(5);
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  243-block  1
+        1:  244:    vector<Car> sortedEmpty = testService.sortByRegistrationNumber();
+        1:  244-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  245:    assert(sortedEmpty.empty() == true);
+        1:  245-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  245-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        1:  245-block  2
+    %%%%%:  245-block  3
+        -:  246:
+        1:  247:}
+        1:  247-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:  247-block  1
+call    6 never executed
+    $$$$$:  247-block  2
+call    7 never executed
+    $$$$$:  247-block  3
+call    8 never executed
+    $$$$$:  247-block  4
+call    9 never executed
+    $$$$$:  247-block  5
+call   10 never executed
+    $$$$$:  247-block  6
+call   11 never executed
+        -:  248:
+function _Z9testListav called 1 returned 100% blocks executed 45%
+        1:  249:void testLista() {
+        1:  250:    CarRepo testRepo;
+        1:  250-block  0
+call    0 returned 1
+        -:  251:    carValidator testVal;
+        1:  252:    carService testService{ testRepo,testVal };
+call    0 returned 1
+        -:  253:
+        1:  254:    testService.addCar("CJ 21 NEO", "Volvo", "V50", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  254-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  254-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  254-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  254-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  254-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  254-block  5
+call   27 never executed
+    $$$$$:  254-block  6
+    $$$$$:  254-block  7
+call   28 never executed
+    $$$$$:  254-block  8
+    $$$$$:  254-block  9
+call   29 never executed
+    $$$$$:  254-block 10
+    $$$$$:  254-block 11
+call   30 never executed
+    $$$$$:  254-block 12
+    $$$$$:  254-block 13
+call   31 never executed
+    $$$$$:  254-block 14
+    $$$$$:  254-block 15
+call   32 never executed
+    $$$$$:  254-block 16
+    $$$$$:  254-block 17
+call   33 never executed
+    $$$$$:  254-block 18
+    $$$$$:  254-block 19
+call   34 never executed
+    $$$$$:  254-block 20
+        1:  255:    testService.addCar("NT 23 JOR", "Volvo", "XC-90", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  255-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  255-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  255-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  255-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  255-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  255-block  5
+call   27 never executed
+    $$$$$:  255-block  6
+    $$$$$:  255-block  7
+call   28 never executed
+    $$$$$:  255-block  8
+    $$$$$:  255-block  9
+call   29 never executed
+    $$$$$:  255-block 10
+    $$$$$:  255-block 11
+call   30 never executed
+    $$$$$:  255-block 12
+    $$$$$:  255-block 13
+call   31 never executed
+    $$$$$:  255-block 14
+    $$$$$:  255-block 15
+call   32 never executed
+    $$$$$:  255-block 16
+    $$$$$:  255-block 17
+call   33 never executed
+    $$$$$:  255-block 18
+    $$$$$:  255-block 19
+call   34 never executed
+    $$$$$:  255-block 20
+        1:  256:    testService.addCar("CJ 77 SUS", "Mazda", "6", "Combi");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  256-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  256-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  256-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  256-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  256-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  256-block  5
+call   27 never executed
+    $$$$$:  256-block  6
+    $$$$$:  256-block  7
+call   28 never executed
+    $$$$$:  256-block  8
+    $$$$$:  256-block  9
+call   29 never executed
+    $$$$$:  256-block 10
+    $$$$$:  256-block 11
+call   30 never executed
+    $$$$$:  256-block 12
+    $$$$$:  256-block 13
+call   31 never executed
+    $$$$$:  256-block 14
+    $$$$$:  256-block 15
+call   32 never executed
+    $$$$$:  256-block 16
+    $$$$$:  256-block 17
+call   33 never executed
+    $$$$$:  256-block 18
+    $$$$$:  256-block 19
+call   34 never executed
+    $$$$$:  256-block 20
+        1:  257:    testService.addCar("MM 88 JOS", "Skoda", "Superb", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  257-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  257-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  257-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  257-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  257-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  257-block  5
+call   27 never executed
+    $$$$$:  257-block  6
+    $$$$$:  257-block  7
+call   28 never executed
+    $$$$$:  257-block  8
+    $$$$$:  257-block  9
+call   29 never executed
+    $$$$$:  257-block 10
+    $$$$$:  257-block 11
+call   30 never executed
+    $$$$$:  257-block 12
+    $$$$$:  257-block 13
+call   31 never executed
+    $$$$$:  257-block 14
+    $$$$$:  257-block 15
+call   32 never executed
+    $$$$$:  257-block 16
+    $$$$$:  257-block 17
+call   33 never executed
+    $$$$$:  257-block 18
+    $$$$$:  257-block 19
+call   34 never executed
+    $$$$$:  257-block 20
+        1:  258:    testService.addCar("CJ 23 APA", "Tesla", "Model 3", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  258-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  258-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  258-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  258-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  258-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  258-block  5
+call   27 never executed
+    $$$$$:  258-block  6
+    $$$$$:  258-block  7
+call   28 never executed
+    $$$$$:  258-block  8
+    $$$$$:  258-block  9
+call   29 never executed
+    $$$$$:  258-block 10
+    $$$$$:  258-block 11
+call   30 never executed
+    $$$$$:  258-block 12
+    $$$$$:  258-block 13
+call   31 never executed
+    $$$$$:  258-block 14
+    $$$$$:  258-block 15
+call   32 never executed
+    $$$$$:  258-block 16
+    $$$$$:  258-block 17
+call   33 never executed
+    $$$$$:  258-block 18
+    $$$$$:  258-block 19
+call   34 never executed
+    $$$$$:  258-block 20
+        1:  259:    testService.addCar("SJ 65 URS", "Renault", "Austral", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  259-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  259-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  259-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  259-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  259-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  259-block  5
+call   27 never executed
+    $$$$$:  259-block  6
+    $$$$$:  259-block  7
+call   28 never executed
+    $$$$$:  259-block  8
+    $$$$$:  259-block  9
+call   29 never executed
+    $$$$$:  259-block 10
+    $$$$$:  259-block 11
+call   30 never executed
+    $$$$$:  259-block 12
+    $$$$$:  259-block 13
+call   31 never executed
+    $$$$$:  259-block 14
+    $$$$$:  259-block 15
+call   32 never executed
+    $$$$$:  259-block 16
+    $$$$$:  259-block 17
+call   33 never executed
+    $$$$$:  259-block 18
+    $$$$$:  259-block 19
+call   34 never executed
+    $$$$$:  259-block 20
+        -:  260:
+        1:  261:    testService.addRandomtoListaMasina(4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  262:    assert(testService.getListaMasini().size() == 4);
+        1:  262-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  262-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  262-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  262-block  3
+    %%%%%:  262-block  4
+        1:  263:    testService.emptyListaMasina();
+        1:  263-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  264:    assert(testService.getListaMasini().size() == 0);
+        1:  264-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  264-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  264-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  264-block  3
+    %%%%%:  264-block  4
+        -:  265:
+        1:  266:    testService.addRandomtoListaMasina(20);
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  267:    //putem adauga doar 6 masini (fara sa se repete)
+       1*:  268:    assert(testService.getListaMasini().size() == 6);
+        1:  268-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  268-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  268-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  268-block  3
+    %%%%%:  268-block  4
+        -:  269:
+        1:  270:    testService.emptyListaMasina();
+        1:  270-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  271:    testService.addToLista("SJ 65 URS");
+        1:  271-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  271-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  271-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  271-block  3
+call    9 never executed
+    $$$$$:  271-block  4
+    $$$$$:  271-block  5
+call   10 never executed
+    $$$$$:  271-block  6
+       1*:  272:    assert(testService.getListaMasini().size() == 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  272-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  272-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  272-block  2
+    %%%%%:  272-block  3
+        -:  273:
+        -:  274:    /*try {
+        -:  275:        testService.addToLista("SJ 65 URS");
+        -:  276:        assert(false);
+        -:  277:    }
+        -:  278:    catch (CarRepoException&) {
+        -:  279:        assert(true);
+        -:  280:    }*/
+        -:  281:
+        -:  282:
+        1:  283:}
+        1:  283-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  283-block  1
+call    2 never executed
+    $$$$$:  283-block  2
+call    3 never executed
+        -:  284:
+function _Z11testServicev called 1 returned 100% blocks executed 100%
+        1:  285:void testService(){
+        1:  286:    testAddService();
+        1:  286-block  0
+call    0 returned 1
+        1:  287:    testFindService();
+call    0 returned 1
+        1:  288:    testFilterService();
+call    0 returned 1
+        1:  289:    testSortService();
+call    0 returned 1
+        1:  290:    testLista();
+call    0 returned 1
+        1:  291:}

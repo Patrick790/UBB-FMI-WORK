@@ -1,0 +1,757 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab2-4agentie/Service.c
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\Service.c.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\Service.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Service.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include <assert.h>
+        -:    5:
+function createService called 8 returned 100% blocks executed 75%
+        8:    6:Service* createService(OfertaRepo* r)
+        -:    7:{
+        -:    8:    //Creeare service
+        -:    9:
+        8:   10:    Service* s = malloc(sizeof(Service));
+        8:   11:    if (s == NULL)
+        8:   11-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+        -:   12:    {
+    #####:   13:        return NULL;
+    %%%%%:   13-block  0
+        -:   14:    }
+        8:   15:    s->repo = r;
+        -:   16:
+        8:   17:    return s;
+        8:   17-block  0
+        -:   18:}
+        -:   19:
+function destroyService called 8 returned 100% blocks executed 100%
+        8:   20:void destroyService(Service* s)
+        -:   21:{
+        -:   22:    //Distrugere service - eliberare memorie
+        -:   23:    //:param: s (Service*)
+        -:   24:
+        8:   25:    if (s == NULL)
+        8:   25-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 7
+        -:   26:    {
+        1:   27:        return;
+        1:   27-block  0
+        -:   28:    }
+        -:   29:
+        7:   30:    destroyRepo(s->repo);
+        7:   30-block  0
+call    0 returned 7
+        -:   31:
+        7:   32:    free(s);
+        -:   33:}
+        -:   34:
+function addOferta called 15 returned 100% blocks executed 83%
+       15:   35:int addOferta(Service* s, char* tip, char* destinatie, char* data, int pret)
+        -:   36:{
+        -:   37:    //Creeaza si adauga o oferta
+        -:   38:    //:param: tip (char*)
+        -:   39:    //:param: destinatie (char*)
+        -:   40:    //:param: data (char*)
+        -:   41:    //:param: pret (int)
+        -:   42:    //:return: oferta (Oferta*)
+        -:   43:
+       15:   44:    Oferta* o = createOferta(tip, destinatie, data, pret);
+       15:   44-block  0
+call    0 returned 15
+        -:   45:
+       15:   46:    int res = add(s->repo, o);
+call    0 returned 15
+        -:   47:
+       15:   48:    if (res == -1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 15
+        -:   49:    {
+    #####:   50:        destroyOferta(o);
+    %%%%%:   50-block  0
+call    0 never executed
+        -:   51:    }
+        -:   52:
+       15:   53:    return res;
+       15:   53-block  0
+        -:   54:}
+        -:   55:
+function deleteOferta called 1 returned 100% blocks executed 100%
+        1:   56:int deleteOferta(Service* s, int nr)
+        -:   57:{
+        -:   58:    //Sterge o oferta data de un numar
+        -:   59:    //:param: nr (int)
+        -:   60:    //:return: res(int) 1/0
+        -:   61:
+        1:   62:    int res = deleteO(s->repo, nr);
+        1:   62-block  0
+call    0 returned 1
+        -:   63:
+        1:   64:    return res;
+        -:   65:}
+        -:   66:
+function modifyOferta called 1 returned 100% blocks executed 100%
+        1:   67:int modifyOferta(Service* s, int nr, int pret)
+        -:   68:{
+        -:   69:    //Modifca pretul unei oferte data de un numar
+        -:   70:    //:param: nr (int)
+        -:   71:    //:param: pret (int)
+        -:   72:    //:return: res (int) 1/0
+        -:   73:
+        1:   74:    int res = modifyO(s->repo, nr, pret);
+        1:   74-block  0
+call    0 returned 1
+        -:   75:
+        1:   76:    return res;
+        -:   77:}
+        -:   78:
+function getLen called 1 returned 100% blocks executed 100%
+        1:   79:int getLen(Service* s)
+        -:   80:{
+        -:   81:    //Returneaza lungimea
+        -:   82:
+        1:   83:    return getLength(s->repo);
+        1:   83-block  0
+call    0 returned 1
+        -:   84:}
+        -:   85:
+function getRepo called 1 returned 100% blocks executed 100%
+        1:   86:OfertaRepo* getRepo(Service* s)
+        -:   87:{
+        -:   88:    //Returneaza repository-ul service-ului
+        -:   89:
+        1:   90:    return s->repo;
+        1:   90-block  0
+        -:   91:}
+        -:   92:
+function filterbypret called 3 returned 100% blocks executed 100%
+        3:   93:OfertaRepo* filterbypret(Service* s, int pret)
+        -:   94:{
+        -:   95:    //Filtreaza ofertele care au un anumit pret
+        -:   96:    //:param: pret (int)
+        -:   97:    //:return: ^un repository (OfertaRepo*)
+        -:   98:
+        3:   99:    if (s == NULL)
+        3:   99-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  100:    {
+        2:  101:        return NULL;
+        2:  101-block  0
+        -:  102:    }
+        1:  103:    return filterbypretRepo(s->repo, pret);
+        1:  103-block  0
+call    0 returned 1
+        -:  104:}
+        -:  105:
+function filterbydata called 2 returned 100% blocks executed 100%
+        2:  106:OfertaRepo* filterbydata(Service* s, char* data) {
+        -:  107:
+        2:  108:    if (s == NULL)
+        2:  108-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:  109:    {
+        1:  110:        return NULL;
+        1:  110-block  0
+        -:  111:    }
+        1:  112:    return filterbydataRepo(s->repo, data);
+        1:  112-block  0
+call    0 returned 1
+        -:  113:}
+        -:  114:
+function filterbytip called 3 returned 100% blocks executed 100%
+        3:  115:OfertaRepo* filterbytip(Service* s, char* tip)
+        -:  116:{
+        -:  117:    //Filtreaza ofertele care au un anumit tip
+        -:  118:    //:param: tip (char*)
+        -:  119:    //:return: ^un repository (OfertaRepo*)
+        -:  120:
+        3:  121:    if (s == NULL)
+        3:  121-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  122:    {
+        2:  123:        return NULL;
+        2:  123-block  0
+        -:  124:    }
+        1:  125:    return filterbytipRepo(s->repo, tip);
+        1:  125-block  0
+call    0 returned 1
+        -:  126:}
+        -:  127:
+function filterbydestinatie called 3 returned 100% blocks executed 100%
+        3:  128:OfertaRepo* filterbydestinatie(Service* s, char* destinatie)
+        -:  129:{
+        -:  130:    //Filtreaza ofertele care au o anumita destinatie
+        -:  131:    //:param: destinatie (char*)
+        -:  132:    //:return: ^un repository (OfertaRepo*)
+        -:  133:
+        3:  134:    if (s == NULL)
+        3:  134-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  135:    {
+        2:  136:        return NULL;
+        2:  136-block  0
+        -:  137:    }
+        1:  138:    return filterbydestinatieRepo(s->repo, destinatie);
+        1:  138-block  0
+call    0 returned 1
+        -:  139:}
+        -:  140:
+function filterbytot called 2 returned 100% blocks executed 100%
+        2:  141:OfertaRepo* filterbytot(Service* s, char* destinatie, int pret) {
+        -:  142:
+        2:  143:    if (s == NULL)
+        2:  143-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:  144:    {
+        1:  145:        return NULL;
+        1:  145-block  0
+        -:  146:    }
+        1:  147:    return filterbytotRepo(s->repo, destinatie, pret);
+        1:  147-block  0
+call    0 returned 1
+        -:  148:}
+        -:  149:
+function sortbydestinatie called 3 returned 100% blocks executed 100%
+        3:  150:OfertaRepo* sortbydestinatie(Service* s)
+        -:  151:{
+        -:  152:    //Sorteaza dupa destinatie
+        -:  153:    //:return: ^un repository (OfertaRepo*)
+        -:  154:
+        3:  155:    if (s == NULL)
+        3:  155-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  156:    {
+        2:  157:        return NULL;
+        2:  157-block  0
+        -:  158:    }
+        1:  159:    return sort(s->repo,compararedestinatie);
+        1:  159-block  0
+call    0 returned 1
+        -:  160:}
+        -:  161:
+function sortbypret called 3 returned 100% blocks executed 100%
+        3:  162:OfertaRepo* sortbypret(Service* s)
+        -:  163:{
+        -:  164:    //Sorteaza dupa pret
+        -:  165:    //:return: ^un repository (OfertaRepo*)
+        -:  166:
+        3:  167:    if (s == NULL)
+        3:  167-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  168:    {
+        2:  169:        return NULL;
+        2:  169-block  0
+        -:  170:    }
+        -:  171:    //Oferta* o1 = NULL;
+        -:  172:    //Oferta* o2 = NULL;
+        1:  173:    return sort(s->repo,compararepret);
+        1:  173-block  0
+call    0 returned 1
+        -:  174:}
+        -:  175:
+function copyOfertaService called 3 returned 100% blocks executed 100%
+        3:  176:OfertaRepo* copyOfertaService(Service* s) {
+        3:  177:    if (s == NULL) {
+        3:  177-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  178:        return NULL;
+        1:  178-block  0
+        -:  179:    }
+        2:  180:    return copyOfertaRepo(s->repo);
+        2:  180-block  0
+call    0 returned 2
+        -:  181:}
+        -:  182:
+function undoService called 4 returned 100% blocks executed 100%
+        4:  183:void undoService(Service* s, Vector* undoList) {
+        4:  184:    s->repo = undo(s->repo, undoList);
+        4:  184-block  0
+call    0 returned 4
+        4:  185:}
+        -:  186:
+        -:  187://-----------Tests-------------
+function testaddOferta called 1 returned 100% blocks executed 68%
+        1:  188:void testaddOferta()
+        -:  189:{
+        1:  190:    OfertaRepo* r = createRepo();
+        1:  190-block  0
+call    0 returned 1
+        1:  191:    Service* s = createService(r);
+call    0 returned 1
+       1*:  192:    assert(addOferta(s, "munte", "Fagaras", "1/1/1000", 100) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  192-block  0
+call    3 never executed
+        1:  192-block  1
+       1*:  193:    assert(getLen(s) == 1);
+        1:  193-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  193-block  1
+call    3 never executed
+        1:  193-block  2
+       1*:  194:    assert(getRepo(s) == r);
+        1:  194-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  194-block  1
+call    3 never executed
+        1:  194-block  2
+        1:  195:    destroyService(s);
+        1:  195-block  0
+call    0 returned 1
+        1:  196:}
+        -:  197:
+function testfilter_sort called 1 returned 100% blocks executed 66%
+        1:  198:void testfilter_sort()
+        -:  199:{
+        1:  200:    OfertaRepo* r = createRepo();
+        1:  200-block  0
+call    0 returned 1
+        1:  201:    Service* s = createService(r);
+call    0 returned 1
+       1*:  202:    assert(sortbypret(NULL) == NULL);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  202-block  0
+call    3 never executed
+        1:  202-block  1
+       1*:  203:    assert(sortbydestinatie(NULL) == NULL);
+        1:  203-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  203-block  1
+call    3 never executed
+        1:  203-block  2
+       1*:  204:    assert(filterbydestinatie(NULL,"Fagaras") == NULL);
+        1:  204-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  204-block  1
+call    3 never executed
+        1:  204-block  2
+       1*:  205:    assert(filterbytip(NULL,"munte") == NULL);
+        1:  205-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  205-block  1
+call    3 never executed
+        1:  205-block  2
+       1*:  206:    assert(filterbypret(NULL,100) == NULL);
+        1:  206-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  206-block  1
+call    3 never executed
+        1:  206-block  2
+       1*:  207:    assert(sortbypret(NULL) == NULL);
+        1:  207-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  207-block  1
+call    3 never executed
+        1:  207-block  2
+       1*:  208:    assert(sortbydestinatie(NULL) == NULL);
+        1:  208-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  208-block  1
+call    3 never executed
+        1:  208-block  2
+       1*:  209:    assert(filterbydestinatie(NULL,"a") == NULL);
+        1:  209-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  209-block  1
+call    3 never executed
+        1:  209-block  2
+       1*:  210:    assert(filterbytip(NULL,"a") == NULL);
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  210-block  1
+call    3 never executed
+        1:  210-block  2
+       1*:  211:    assert(filterbypret(NULL,200) == NULL);
+        1:  211-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  211-block  1
+call    3 never executed
+        1:  211-block  2
+       1*:  212:    assert(filterbydata(NULL, "1/1/1000") == NULL);
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  212-block  1
+call    3 never executed
+        1:  212-block  2
+       1*:  213:    assert(filterbytot(NULL, "Brasov", 100) == NULL);
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  213-block  1
+call    3 never executed
+        1:  213-block  2
+        1:  214:    destroyService(s);
+        1:  214-block  0
+call    0 returned 1
+        -:  215:
+        1:  216:    OfertaRepo* r2 = createRepo();
+call    0 returned 1
+        1:  217:    Service* s2 = createService(r2);
+call    0 returned 1
+        1:  218:    addOferta(s2, "munte", "Fagaras", "1/1/1000", 100);
+call    0 returned 1
+        1:  219:    addOferta(s2, "munte", "Brasov", "1/1/1000", 50);
+call    0 returned 1
+        -:  220:
+        1:  221:    OfertaRepo* rs1 = sortbypret(s2);
+call    0 returned 1
+       1*:  222:    assert(rs1 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  222-block  0
+call    2 never executed
+        1:  222-block  1
+        1:  223:    destroyRepo(rs1);
+        1:  223-block  0
+call    0 returned 1
+        -:  224:
+        1:  225:    OfertaRepo* rs2 = sortbydestinatie(s2);
+call    0 returned 1
+       1*:  226:    assert(rs2 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  226-block  0
+call    2 never executed
+        1:  226-block  1
+        1:  227:    destroyRepo(rs2);
+        1:  227-block  0
+call    0 returned 1
+        -:  228:
+        1:  229:    OfertaRepo* rf1 = filterbydestinatie(s2,"Fagaras");
+call    0 returned 1
+       1*:  230:    assert(rf1 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  230-block  0
+call    2 never executed
+        1:  230-block  1
+        1:  231:    destroyRepo(rf1);
+        1:  231-block  0
+call    0 returned 1
+        -:  232:
+        1:  233:    OfertaRepo* rf2 = filterbytip(s2,"munte");
+call    0 returned 1
+       1*:  234:    assert(rf2 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  234-block  0
+call    2 never executed
+        1:  234-block  1
+        1:  235:    destroyRepo(rf2);
+        1:  235-block  0
+call    0 returned 1
+        -:  236:
+        1:  237:    OfertaRepo* rf3 = filterbypret(s2,50);
+call    0 returned 1
+       1*:  238:    assert(rf3 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  238-block  0
+call    2 never executed
+        1:  238-block  1
+        1:  239:    destroyRepo(rf3);
+        1:  239-block  0
+call    0 returned 1
+        -:  240:
+        1:  241:    OfertaRepo* rf4 = filterbydata(s2, "1/1/1000");
+call    0 returned 1
+       1*:  242:    assert(rf4 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  242-block  0
+call    2 never executed
+        1:  242-block  1
+        1:  243:    destroyRepo(rf4);
+        1:  243-block  0
+call    0 returned 1
+        -:  244:
+        1:  245:    OfertaRepo* rf5 = filterbytot(s2, "Brasov", 60);
+call    0 returned 1
+       1*:  246:    assert(rf5 != NULL);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  246-block  0
+call    2 never executed
+        1:  246-block  1
+        1:  247:    destroyRepo(rf5);
+        1:  247-block  0
+call    0 returned 1
+        -:  248:
+        1:  249:    destroyService(s2);
+call    0 returned 1
+        -:  250:
+        1:  251:}
+function testdeleteOferta called 1 returned 100% blocks executed 73%
+        1:  252:void testdeleteOferta()
+        -:  253:{
+        1:  254:    OfertaRepo* r = createRepo();
+        1:  254-block  0
+call    0 returned 1
+        1:  255:    Service* s = createService(r);
+call    0 returned 1
+       1*:  256:    assert(addOferta(s, "munte", "Fagaras", "1/1/1000", 100) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  256-block  0
+call    3 never executed
+        1:  256-block  1
+       1*:  257:    assert(deleteOferta(s, 0) == 1);
+        1:  257-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  257-block  1
+call    3 never executed
+        1:  257-block  2
+        1:  258:    destroyService(s);
+        1:  258-block  0
+call    0 returned 1
+        1:  259:    destroyService(NULL);
+call    0 returned 1
+        1:  260:}
+        -:  261:
+function testmodifyOferta called 1 returned 100% blocks executed 71%
+        1:  262:void testmodifyOferta()
+        -:  263:{
+        1:  264:    OfertaRepo* r = createRepo();
+        1:  264-block  0
+call    0 returned 1
+        1:  265:    Service* s = createService(r);
+call    0 returned 1
+       1*:  266:    assert(addOferta(s, "munte", "Fagaras", "1/1/1000", 100) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  266-block  0
+call    3 never executed
+        1:  266-block  1
+       1*:  267:    assert(modifyOferta(s, 0, 100) == 1);
+        1:  267-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  267-block  1
+call    3 never executed
+        1:  267-block  2
+        1:  268:    destroyService(s);
+        1:  268-block  0
+call    0 returned 1
+        1:  269:}
+        -:  270:
+function test_srv_copyOfertaRepo called 1 returned 100% blocks executed 67%
+        1:  271:void test_srv_copyOfertaRepo() {
+       1*:  272:    assert(copyOfertaService(NULL) == NULL);
+        1:  272-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  272-block  1
+call    3 never executed
+        1:  272-block  2
+        1:  273:    OfertaRepo* repo1 = createRepo();
+        1:  273-block  0
+call    0 returned 1
+        1:  274:    Service* serv = createService(repo1);
+call    0 returned 1
+        1:  275:    addOferta(serv, "munte", "Fagaras", "20/10/2020", 200);
+call    0 returned 1
+        1:  276:    OfertaRepo* repo = copyOfertaService(serv);
+call    0 returned 1
+        -:  277:
+       1*:  278:    assert(repo->oferte->length == serv->repo->oferte->length);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  278-block  0
+call    2 never executed
+        1:  278-block  1
+       1*:  279:    assert(repo->oferte->capacity == serv->repo->oferte->capacity);
+        1:  279-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  279-block  1
+call    2 never executed
+        1:  279-block  2
+       1*:  280:    assert(repo->oferte->destroyElemFct == serv->repo->oferte->destroyElemFct);
+        1:  280-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  280-block  1
+call    2 never executed
+        1:  280-block  2
+        -:  281:
+        1:  282:    destroyRepo(repo);
+        1:  282-block  0
+call    0 returned 1
+        1:  283:    destroyService(serv);
+call    0 returned 1
+        1:  284:}
+        -:  285:
+function test_srv_undo called 1 returned 100% blocks executed 66%
+        1:  286:void test_srv_undo() {
+        1:  287:    Vector* undoList_t = createVector(2, (DestroyElementFunctionType) destroyRepo);
+        1:  287-block  0
+call    0 returned 1
+        1:  288:    OfertaRepo* repo = createRepo();
+call    0 returned 1
+        1:  289:    Service* serv = createService(repo);
+call    0 returned 1
+        -:  290:
+        1:  291:    addOferta(serv, "munte", "Fagaras", "20/10/2020", 200);
+call    0 returned 1
+        1:  292:    addTElement(undoList_t, copyOfertaRepo(serv->repo));
+call    0 returned 1
+call    1 returned 1
+        1:  293:    addOferta(serv, "mare", "Marea Neagra", "10/10/2020", 600);
+call    0 returned 1
+        1:  294:    addTElement(undoList_t, copyOfertaRepo(serv->repo));
+call    0 returned 1
+call    1 returned 1
+        1:  295:    addOferta(serv, "munte", "Brasov", "1/3/2019", 400);
+call    0 returned 1
+        1:  296:    addTElement(undoList_t, copyOfertaRepo(serv->repo));
+call    0 returned 1
+call    1 returned 1
+        -:  297:
+       1*:  298:    assert(undoList_t->length == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  298-block  0
+call    2 never executed
+        1:  298-block  1
+       1*:  299:    assert(serv->repo->oferte->length == 3);
+        1:  299-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  299-block  1
+call    2 never executed
+        1:  299-block  2
+        1:  300:    undoService(serv, undoList_t);
+        1:  300-block  0
+call    0 returned 1
+       1*:  301:    assert(serv->repo->oferte->length == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  301-block  0
+call    2 never executed
+        1:  301-block  1
+       1*:  302:    assert(undoList_t->length == 2);
+        1:  302-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  302-block  1
+call    2 never executed
+        1:  302-block  2
+        1:  303:    undoService(serv, undoList_t);
+        1:  303-block  0
+call    0 returned 1
+       1*:  304:    assert(serv->repo->oferte->length == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  304-block  0
+call    2 never executed
+        1:  304-block  1
+       1*:  305:    assert(undoList_t->length == 1);
+        1:  305-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  305-block  1
+call    2 never executed
+        1:  305-block  2
+        1:  306:    undoService(serv, undoList_t);
+        1:  306-block  0
+call    0 returned 1
+       1*:  307:    assert(serv->repo->oferte->length == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  307-block  0
+call    2 never executed
+        1:  307-block  1
+       1*:  308:    assert(undoList_t->length == 1);
+        1:  308-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  308-block  1
+call    2 never executed
+        1:  308-block  2
+        1:  309:    undoService(serv, undoList_t);
+        1:  309-block  0
+call    0 returned 1
+       1*:  310:    assert(serv->repo->oferte->length == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  310-block  0
+call    2 never executed
+        1:  310-block  1
+       1*:  311:    assert(undoList_t->length == 1);
+        1:  311-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  311-block  1
+call    2 never executed
+        1:  311-block  2
+        -:  312:
+        1:  313:    destroyService(serv);
+        1:  313-block  0
+call    0 returned 1
+        1:  314:    destroyVector(undoList_t);
+call    0 returned 1
+        1:  315:}
+        -:  316:
+function testsService called 1 returned 100% blocks executed 100%
+        1:  317:void testsService()
+        -:  318:{
+        1:  319:    testdeleteOferta();
+        1:  319-block  0
+call    0 returned 1
+        1:  320:    testmodifyOferta();
+call    0 returned 1
+        1:  321:    testaddOferta();
+call    0 returned 1
+        1:  322:    testfilter_sort();
+call    0 returned 1
+        1:  323:    test_srv_copyOfertaRepo();
+call    0 returned 1
+        1:  324:    test_srv_undo();
+call    0 returned 1
+        1:  325:}

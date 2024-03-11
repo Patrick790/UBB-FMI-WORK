@@ -1,0 +1,3 @@
+C:/Users/Ardelean/CLionProjects/Grafuri/Huffman/cmake-build-debug/CMakeFiles/Huffman.dir
+C:/Users/Ardelean/CLionProjects/Grafuri/Huffman/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ardelean/CLionProjects/Grafuri/Huffman/cmake-build-debug/CMakeFiles/rebuild_cache.dir

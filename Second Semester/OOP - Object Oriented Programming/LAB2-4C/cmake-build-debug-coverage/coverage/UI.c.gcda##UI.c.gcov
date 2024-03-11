@@ -1,0 +1,713 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab2-4agentie/UI.c
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\UI.c.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\UI.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "UI.h"
+        -:    2:#include<stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include<string.h>
+        -:    5:
+function createUI called 1 returned 100% blocks executed 75%
+        1:    6:UI* createUI(Service* s)
+        -:    7:{
+        -:    8:    //Creeare UI
+        -:    9:
+        1:   10:    UI* ui = malloc(sizeof(UI));
+        1:   11:    if (ui == NULL)
+        1:   11-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   12:    {
+    #####:   13:        return NULL;
+    %%%%%:   13-block  0
+        -:   14:    }
+        1:   15:    ui->serv = s;
+        1:   16:    return ui;
+        1:   16-block  0
+        -:   17:}
+        -:   18:
+function destroyUI called 0 returned 0% blocks executed 0%
+    #####:   19:void destroyUI(UI* ui)
+        -:   20:{
+        -:   21:    //Distrugere UI
+        -:   22:
+    #####:   23:    if (ui == NULL)
+    %%%%%:   23-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   24:    {
+    #####:   25:        return;
+    %%%%%:   25-block  0
+        -:   26:    }
+        -:   27:
+    #####:   28:    destroyService(ui->serv);
+    %%%%%:   28-block  0
+call    0 never executed
+        -:   29:
+    #####:   30:    free(ui);
+        -:   31:}
+        -:   32:
+function printMenu called 1 returned 100% blocks executed 100%
+        1:   33:void printMenu()
+        -:   34:{
+        -:   35:    //Printare meniu
+        -:   36:
+        1:   37:    printf("\n-----------------------------\n");
+        1:   37-block  0
+call    0 returned 1
+        1:   38:    printf("1 - Adauga oferta\n");
+call    0 returned 1
+        1:   39:    printf("2 - Actualizeaza oferta\n");
+call    0 returned 1
+        1:   40:    printf("3 - Sterge oferta\n");
+call    0 returned 1
+        1:   41:    printf("4 - Afisare oferte\n");
+call    0 returned 1
+        1:   42:    printf("5 - Sortare\n");
+call    0 returned 1
+        1:   43:    printf("6 - Filtrare in functie de criteriu\n");
+call    0 returned 1
+        -:   44:   /* printf("7 - Undo\n");
+        -:   45:    printf("8 - Filtrare in functie de data\n");
+        -:   46:    printf("9 - Filtrare in functie de destinatia data si pret <= cel dat\n");*/
+        1:   47:    printf("0 - Iesire\n");
+call    0 returned 1
+        1:   48:    printf("-------------------------------\n");
+call    0 returned 1
+        1:   49:}
+        -:   50:
+function printOferte called 0 returned 0% blocks executed 0%
+    #####:   51:void printOferte(OfertaRepo* repo)
+        -:   52:{
+        -:   53:    //Printare oferte dintr-un repository
+        -:   54:    //:param: repo (OfertaRepo*)
+        -:   55:
+    #####:   56:    printf("\n");
+    %%%%%:   56-block  0
+call    0 never executed
+    #####:   57:    int len = getLength(repo);
+call    0 never executed
+    #####:   58:    if (len == 0)
+branch  0 never executed
+branch  1 never executed
+        -:   59:    {
+    #####:   60:        printf("Nu exista oferte!\n");
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:        return;
+        -:   62:    }
+        -:   63:
+    #####:   64:    for (int i = 0; i < len; i++)
+    %%%%%:   64-block  0
+    %%%%%:   64-block  1
+branch  0 never executed
+branch  1 never executed
+        -:   65:    {
+    #####:   66:        Oferta* oferta = getOfertaOnPos(repo, i);
+    %%%%%:   66-block  0
+call    0 never executed
+        -:   67:
+        -:   68:        char ostring[200];
+    #####:   69:        toString(oferta, ostring);
+call    0 never executed
+    #####:   70:        printf("%d) %s\n", i, ostring);
+call    0 never executed
+        -:   71:
+        -:   72:    }
+        -:   73:}
+        -:   74:
+function readIntegerNumber called 1 returned 0% blocks executed 56%
+        1:   75:int readIntegerNumber(const char* message)
+        -:   76:{
+        -:   77:    //Citire un numar intreg
+        -:   78:
+        1:   79:    char s[16] = { 0 };
+        1:   80:    int res = 0;
+        1:   81:    int flag = 0;
+        1:   82:    int r = 0;
+        -:   83:
+        1:   84:    while (flag == 0)
+        1:   84-block  0
+        1:   84-block  1
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        -:   85:    {
+        1:   86:        printf(message);
+        1:   86-block  0
+call    0 returned 1
+        1:   87:        int scanf_result = scanf("%15s", s);
+call    0 returned 0
+        -:   88:
+        -:   89:        if (scanf_result == 0)
+        -:   90:        {
+        -:   91:
+        -:   92:        }
+        -:   93:
+    #####:   94:        r = sscanf(s, "%d", &res);
+call    0 never executed
+    #####:   95:        flag = (r == 1);
+    #####:   96:        if (flag == 0)
+branch  0 never executed
+branch  1 never executed
+    #####:   97:            printf("Introduceti un numar!\n");
+    %%%%%:   97-block  0
+call    0 never executed
+        -:   98:    }
+    #####:   99:    return res;
+    %%%%%:   99-block  0
+        -:  100:}
+        -:  101:
+function validCommand called 0 returned 0% blocks executed 0%
+    #####:  102:int validCommand(int command)
+        -:  103:{
+        -:  104:    //Validare comanda
+        -:  105:    //:param: command(int)
+        -:  106:
+    #####:  107:    if (command >= 0 && command <= 9)
+    %%%%%:  107-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  107-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  108:        return 1;
+    %%%%%:  108-block  0
+    #####:  109:    return 0;
+    %%%%%:  109-block  0
+        -:  110:}
+        -:  111:
+function addOfertaUI called 0 returned 0% blocks executed 0%
+    #####:  112:int addOfertaUI(UI* ui)
+        -:  113:{
+        -:  114:    //Adaugare oferta noua
+        -:  115:
+    #####:  116:    char tip[30] = { 0 }, destinatie[30] = { 0 }, data[11] = { 0 };
+    #####:  117:    int pret=0;
+    #####:  118:    printf("*Tipuri: munte, mare, city break\n");
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:    printf("*Data format: dd/mm/yyy\n");
+call    0 never executed
+    #####:  120:    printf("*Pretul sa fie numar\n\n");
+call    0 never executed
+        -:  121:
+    #####:  122:    printf(">>Introduceti un tip: ");
+call    0 never executed
+    #####:  123:    int s_r = scanf("%29s", tip);
+call    0 never executed
+    #####:  124:    printf(">>Introduceti o destinatie: ");
+call    0 never executed
+    #####:  125:    s_r = scanf("%29s", destinatie);
+call    0 never executed
+    #####:  126:    printf(">>Introduceti o data: ");
+call    0 never executed
+    #####:  127:    int s_d = scanf("%29s", data);
+call    0 never executed
+        -:  128:    if (s_d == 0)
+        -:  129:    {
+        -:  130:
+        -:  131:    }
+    #####:  132:    printf(">>Introduceti un pret: ");
+call    0 never executed
+    #####:  133:    s_r = scanf("%d", &pret);
+call    0 never executed
+        -:  134:
+    #####:  135:    if (strcmp(tip, "munte") != 0 && strcmp(tip, "city break") != 0 && strcmp(tip, "mare") != 0)
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  135-block  0
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  135-block  1
+branch  4 never executed
+branch  5 never executed
+        -:  136:    {
+    #####:  137:        printf("!!! Tip invalid !!!\n");
+    %%%%%:  137-block  0
+call    0 never executed
+    #####:  138:        return 0;
+        -:  139:    }
+        -:  140:
+    #####:  141:    if (s_r == 0)
+    %%%%%:  141-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  142:    {
+    #####:  143:        printf("!!! Pret invalid !!!\n");
+    %%%%%:  143-block  0
+call    0 never executed
+    #####:  144:        return 0;
+        -:  145:    }
+    #####:  146:    return addOferta(ui->serv, tip, destinatie, data, pret);
+    %%%%%:  146-block  0
+call    0 never executed
+        -:  147:}
+        -:  148:
+function deleteOfertaUI called 0 returned 0% blocks executed 0%
+    #####:  149:int deleteOfertaUI(UI* ui)
+        -:  150:{
+        -:  151:    //Stergere oferta
+        -:  152:
+        -:  153:    int nr;
+    #####:  154:    printf("--Introduceti numarul ofertei: ");
+    %%%%%:  154-block  0
+call    0 never executed
+    #####:  155:    int s_r = scanf("%d", &nr);
+call    0 never executed
+        -:  156:
+    #####:  157:    if (nr < 0 || nr >= getLen(ui->serv))
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  157-block  0
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  158:    {
+    #####:  159:        printf("!!! Nu exista oferta cu acest numar !!!\n");
+    %%%%%:  159-block  0
+call    0 never executed
+    #####:  160:        return 0;
+        -:  161:    }
+    #####:  162:    OfertaRepo* repo = getRepo(ui->serv);
+    %%%%%:  162-block  0
+call    0 never executed
+    #####:  163:    Oferta* oferta = getOfertaOnPos(repo, nr);
+call    0 never executed
+        -:  164:
+        -:  165:    char ostring[200];
+    #####:  166:    toString(oferta, ostring);
+call    0 never executed
+    #####:  167:    printf("%d) %s\n", nr, ostring);
+call    0 never executed
+    #####:  168:    printf("Sigur vreti sa stergeti aceasta oferta(yes):");
+call    0 never executed
+        -:  169:
+    #####:  170:    char answer[10] = { 0 };
+    #####:  171:    s_r = scanf("%s", answer);
+call    0 never executed
+    #####:  172:    if (strcmp("yes",answer) == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  173:    {
+    #####:  174:        return deleteOferta(ui->serv, nr);
+    %%%%%:  174-block  0
+call    0 never executed
+        -:  175:    }
+    #####:  176:    printf("Stergere anulata!\n");
+    %%%%%:  176-block  0
+call    0 never executed
+    #####:  177:    return 0;
+        -:  178:}
+        -:  179:
+function modifyOfertaUI called 0 returned 0% blocks executed 0%
+    #####:  180:int modifyOfertaUI(UI* ui)
+        -:  181:{
+        -:  182:    //Modificare oferta
+        -:  183:
+        -:  184:    int nr, pret;
+    #####:  185:    printf("--Introduceti numarul ofertei: ");
+    %%%%%:  185-block  0
+call    0 never executed
+    #####:  186:    int s_r = scanf("%d", &nr);
+call    0 never executed
+        -:  187:
+    #####:  188:    if (nr < 0 || nr >= getLen(ui->serv))
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  188-block  0
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  189:    {
+    #####:  190:        printf("!!! Nu exista oferta cu acest numar !!!\n");
+    %%%%%:  190-block  0
+call    0 never executed
+    #####:  191:        return 0;
+        -:  192:    }
+        -:  193:
+    #####:  194:    printf("--Introduceti un pret nou: ");
+    %%%%%:  194-block  0
+call    0 never executed
+    #####:  195:    s_r = scanf("%d", &pret);
+call    0 never executed
+        -:  196:
+    #####:  197:    return modifyOferta(ui->serv, nr, pret);
+call    0 never executed
+        -:  198:}
+        -:  199:
+function filtrareCriteriuUI called 0 returned 0% blocks executed 0%
+    #####:  200:void filtrareCriteriuUI(UI* ui)
+        -:  201:{
+        -:  202:    //Filtrare dupa un criteriu
+        -:  203:
+    #####:  204:    if (ui == NULL)
+    %%%%%:  204-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  205:    {
+    #####:  206:        return;
+    %%%%%:  206-block  0
+    %%%%%:  206-block  1
+        -:  207:    }
+        -:  208:
+    #####:  209:    printf(">>Introduceti un criteriu: destinatie, tip, pret: ");
+    %%%%%:  209-block  0
+call    0 never executed
+    #####:  210:    char criteriu[100] = { 0 };
+    #####:  211:    int res_scanf = scanf("%s", &criteriu);
+call    0 never executed
+        -:  212:
+    #####:  213:    OfertaRepo* repo = NULL;
+    #####:  214:    if (strcmp("destinatie", criteriu) == 0)
+branch  0 never executed
+branch  1 never executed
+        -:  215:    {
+    #####:  216:        printf(">>Introduceti o destinatie: ");
+    %%%%%:  216-block  0
+call    0 never executed
+    #####:  217:        char destinatie[100] = { 0 };
+    #####:  218:        res_scanf = scanf("%s", &destinatie);
+call    0 never executed
+    #####:  219:        repo = filterbydestinatie(ui->serv, destinatie);
+call    0 never executed
+        -:  220:    }
+    #####:  221:    else if (strcmp("tip", criteriu) == 0)
+    %%%%%:  221-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  222:    {
+    #####:  223:        printf(">>Introduceti un tip: ");
+    %%%%%:  223-block  0
+call    0 never executed
+    #####:  224:        char tip[100] = { 0 };
+    #####:  225:        res_scanf = scanf("%s", &tip);
+call    0 never executed
+    #####:  226:        repo = filterbytip(ui->serv, tip);
+call    0 never executed
+        -:  227:    }
+    #####:  228:    else if (strcmp("pret", criteriu) == 0)
+    %%%%%:  228-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  229:    {
+    #####:  230:        printf(">>Introduceti un pret: ");
+    %%%%%:  230-block  0
+call    0 never executed
+        -:  231:        int pret;
+    #####:  232:        res_scanf = scanf("%d", &pret);
+call    0 never executed
+    #####:  233:        repo = filterbypret(ui->serv, pret);
+call    0 never executed
+        -:  234:    }
+        -:  235:    else
+        -:  236:    {
+    #####:  237:        printf("Criteriu invalid!");
+    %%%%%:  237-block  0
+call    0 never executed
+    #####:  238:        return;
+        -:  239:    }
+    #####:  240:    printOferte(repo);
+    %%%%%:  240-block  0
+call    0 never executed
+    #####:  241:    destroyRepo(repo);
+call    0 never executed
+        -:  242:}
+        -:  243:
+function filtrareDataUI called 0 returned 0% blocks executed 0%
+    #####:  244:void filtrareDataUI(UI* ui)
+        -:  245:{
+        -:  246:    //Filtrare dupa un criteriu
+        -:  247:
+    #####:  248:    if (ui == NULL)
+    %%%%%:  248-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  249:    {
+    #####:  250:        return;
+    %%%%%:  250-block  0
+        -:  251:    }
+        -:  252:
+    #####:  253:    OfertaRepo* repo = NULL;
+    #####:  254:    printf(">>Introduceti o data: ");
+    %%%%%:  254-block  0
+call    0 never executed
+    #####:  255:    char data[11] = { 0 };
+        -:  256:    int res_scanf;
+    #####:  257:    res_scanf = scanf("%10s", &data);
+call    0 never executed
+    #####:  258:    repo = filterbydata(ui->serv, data);
+call    0 never executed
+    #####:  259:    printOferte(repo);
+call    0 never executed
+    #####:  260:    destroyRepo(repo);
+call    0 never executed
+        -:  261:}
+        -:  262:
+function filtrareTotUi called 0 returned 0% blocks executed 0%
+    #####:  263:void filtrareTotUi(UI* ui)
+        -:  264:{
+        -:  265:    //Filtrare dupa un criteriu
+        -:  266:
+    #####:  267:    if (ui == NULL)
+    %%%%%:  267-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  268:    {
+    #####:  269:        return;
+    %%%%%:  269-block  0
+        -:  270:    }
+        -:  271:
+    #####:  272:    OfertaRepo* repo = NULL;
+    #####:  273:    printf(">>Introduceti o destinatie: ");
+    %%%%%:  273-block  0
+call    0 never executed
+    #####:  274:    char destinatie[100] = { 0 };
+        -:  275:    int res_scanf;
+    #####:  276:    res_scanf = scanf("%s", &destinatie);
+call    0 never executed
+    #####:  277:    printf(">>Introduceti un pret: ");
+call    0 never executed
+        -:  278:    int pret, res_scanf2;
+    #####:  279:    res_scanf2 = scanf("%d", &pret);
+call    0 never executed
+    #####:  280:    repo = filterbytot(ui->serv, destinatie, pret);
+call    0 never executed
+    #####:  281:    printOferte(repo);
+call    0 never executed
+    #####:  282:    destroyRepo(repo);
+call    0 never executed
+        -:  283:}
+        -:  284:
+function sortareUI called 0 returned 0% blocks executed 0%
+    #####:  285:void sortareUI(UI* ui)
+        -:  286:{
+        -:  287:    //Sortare oferte
+        -:  288:
+    #####:  289:    printf("1 - pret\n");
+    %%%%%:  289-block  0
+call    0 never executed
+    #####:  290:    printf("2 - destinatie\n");
+call    0 never executed
+    #####:  291:    printf("Alegeti in functie de ce sa sortati: ");
+call    0 never executed
+        -:  292:    int command;
+    #####:  293:    int res_scan = scanf("%d", &command);
+call    0 never executed
+        -:  294:    if (res_scan == 0)
+        -:  295:    {
+        -:  296:
+        -:  297:    }
+        -:  298:
+    #####:  299:    OfertaRepo* repo = NULL;
+    #####:  300:    if (command == 1)
+branch  0 never executed
+branch  1 never executed
+        -:  301:    {
+    #####:  302:        repo = sortbypret(ui->serv);
+    %%%%%:  302-block  0
+call    0 never executed
+        -:  303:    }
+    #####:  304:    else if (command == 2)
+    %%%%%:  304-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  305:    {
+    #####:  306:        repo = sortbydestinatie(ui->serv);
+    %%%%%:  306-block  0
+call    0 never executed
+        -:  307:    }
+        -:  308:    else
+        -:  309:    {
+    #####:  310:        printf("Numa 1 si 2 este....\n");
+    %%%%%:  310-block  0
+call    0 never executed
+    #####:  311:        return ;
+        -:  312:    }
+        -:  313:
+    #####:  314:    printOferte(repo);
+    %%%%%:  314-block  0
+call    0 never executed
+    #####:  315:    destroyRepo(repo);
+call    0 never executed
+        -:  316:}
+        -:  317:
+function undoUI called 0 returned 0% blocks executed 0%
+    #####:  318:void undoUI(UI* ui, Vector* undoList) {
+    #####:  319:    undoService(ui->serv, undoList);
+    %%%%%:  319-block  0
+call    0 never executed
+    #####:  320:}
+        -:  321:
+function startUI called 1 returned 0% blocks executed 10%
+        1:  322:void startUI(UI* ui, Vector* undoList)
+        -:  323:{
+        -:  324:    //Start UI
+        1:  325:    addTElement(undoList, copyOfertaService(ui->serv));
+        1:  325-block  0
+call    0 returned 1
+call    1 returned 1
+        -:  326:
+        -:  327:    while (1)
+    #####:  328:    {
+    %%%%%:  328-block  0
+        1:  329:        printMenu();
+        1:  329-block  0
+call    0 returned 1
+        -:  330:
+        1:  331:        int comanda = readIntegerNumber("Introduceti o comanda: ");
+call    0 returned 0
+    #####:  332:        while (validCommand(comanda) == 0)
+    %%%%%:  332-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  333:        {
+    #####:  334:            printf("Comanda nu este valida!\n");
+    %%%%%:  334-block  0
+call    0 never executed
+    #####:  335:            comanda = readIntegerNumber("Introduceti o comanda: ");
+call    0 never executed
+        -:  336:        }
+    #####:  337:        if (comanda == 0)
+    %%%%%:  337-block  0
+branch  0 never executed
+branch  1 never executed
+        -:  338:        {
+    #####:  339:            break;
+    %%%%%:  339-block  0
+        -:  340:        }
+    #####:  341:        switch (comanda)
+    %%%%%:  341-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+        -:  342:        {
+    #####:  343:            case 1:
+        -:  344:            {
+    #####:  345:                int res = addOfertaUI(ui);
+    %%%%%:  345-block  0
+call    0 never executed
+    #####:  346:                if (res == 1)
+branch  0 never executed
+branch  1 never executed
+        -:  347:                {
+    #####:  348:                    printf("Adaugare efectuata cu succes!");
+    %%%%%:  348-block  0
+call    0 never executed
+    #####:  349:                    addTElement(undoList, copyOfertaService(ui->serv));
+call    0 never executed
+call    1 never executed
+        -:  350:                }
+        -:  351:                else
+        -:  352:                {
+    #####:  353:                    printf("Eroare la adaugare!");
+    %%%%%:  353-block  0
+call    0 never executed
+        -:  354:                }
+    #####:  355:                break;
+    %%%%%:  355-block  0
+        -:  356:            }
+    #####:  357:            case 2:
+        -:  358:            {
+    #####:  359:                int res = modifyOfertaUI(ui);
+    %%%%%:  359-block  0
+call    0 never executed
+    #####:  360:                if (res == 1)
+branch  0 never executed
+branch  1 never executed
+        -:  361:                {
+    #####:  362:                    printf("Modificare efectuata cu succes!");
+    %%%%%:  362-block  0
+call    0 never executed
+    #####:  363:                    addTElement(undoList, copyOfertaService(ui->serv));
+call    0 never executed
+call    1 never executed
+        -:  364:                }
+        -:  365:                else
+        -:  366:                {
+    #####:  367:                    printf("Eroare la modificare!");
+    %%%%%:  367-block  0
+call    0 never executed
+        -:  368:                }
+    #####:  369:                break;
+    %%%%%:  369-block  0
+        -:  370:            }
+    #####:  371:            case 3:
+        -:  372:            {
+    #####:  373:                int res = deleteOfertaUI(ui);
+    %%%%%:  373-block  0
+call    0 never executed
+    #####:  374:                if (res == 1)
+branch  0 never executed
+branch  1 never executed
+        -:  375:                {
+    #####:  376:                    printf("Stergere efectuata cu succes!");
+    %%%%%:  376-block  0
+call    0 never executed
+    #####:  377:                    addTElement(undoList, copyOfertaService(ui->serv));
+call    0 never executed
+call    1 never executed
+        -:  378:                }
+        -:  379:                else
+        -:  380:                {
+    #####:  381:                    printf("Eroare la stergere!");
+    %%%%%:  381-block  0
+call    0 never executed
+        -:  382:                }
+    #####:  383:                break;
+    %%%%%:  383-block  0
+        -:  384:            }
+    #####:  385:            case 4:
+        -:  386:            {
+    #####:  387:                OfertaRepo* repo = getRepo(ui->serv);
+    %%%%%:  387-block  0
+call    0 never executed
+    #####:  388:                printOferte(repo);
+call    0 never executed
+    #####:  389:                break;
+        -:  390:            }
+    #####:  391:            case 5:
+        -:  392:            {
+    #####:  393:                sortareUI(ui);
+    %%%%%:  393-block  0
+call    0 never executed
+    #####:  394:                break;
+        -:  395:            }
+    #####:  396:            case 6:
+        -:  397:            {
+    #####:  398:                filtrareCriteriuUI(ui);
+    %%%%%:  398-block  0
+call    0 never executed
+    #####:  399:                break;
+        -:  400:            }
+    #####:  401:            case 7:
+        -:  402:            {
+    #####:  403:                undoUI(ui, undoList);
+    %%%%%:  403-block  0
+call    0 never executed
+    #####:  404:                break;
+        -:  405:            }
+    #####:  406:            case 8:
+        -:  407:            {
+    #####:  408:                filtrareDataUI(ui);
+    %%%%%:  408-block  0
+call    0 never executed
+    #####:  409:                break;
+        -:  410:            }
+    #####:  411:            case 9:
+        -:  412:            {
+    #####:  413:                filtrareTotUi(ui);
+    %%%%%:  413-block  0
+call    0 never executed
+    #####:  414:                break;
+        -:  415:            }
+        -:  416:        }
+        -:  417:    }
+    #####:  418:}

@@ -1,0 +1,3 @@
+C:/Users/Ardelean/CLionProjects/Grafuri/Kruskal/cmake-build-debug/CMakeFiles/Kruskal.dir
+C:/Users/Ardelean/CLionProjects/Grafuri/Kruskal/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ardelean/CLionProjects/Grafuri/Kruskal/cmake-build-debug/CMakeFiles/rebuild_cache.dir

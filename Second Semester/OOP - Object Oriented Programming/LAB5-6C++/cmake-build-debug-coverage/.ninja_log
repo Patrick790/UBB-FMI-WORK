@@ -1,0 +1,17 @@
+# ninja log v5
+47	1512	7038642475999858	CMakeFiles/lab6_.dir/validator.cpp.obj	e7d995b8b7eb59ad
+5	825	7049358297496326	CMakeFiles/lab6_.dir/main.cpp.obj	b777dc71e9a0ad55
+12	1184	7049358301079337	CMakeFiles/lab6_.dir/Service.cpp.obj	9353ee027d346f56
+10	1236	7049335100283422	CMakeFiles/lab6_.dir/Repo.cpp.obj	73cdaf6a62198b2a
+6	1390	7038642474758082	CMakeFiles/lab6_.dir/Car.cpp.obj	e4f4dacca2cc4c84
+16	1198	7049280386072259	CMakeFiles/lab6_.dir/LstMasina.cpp.obj	e319889f85cc2f3d
+830	1027	7049361242994938	lab6_.exe	6ebe52de6e620a4c
+3	829	7049361241059599	CMakeFiles/lab6_.dir/UI.cpp.obj	e2c42f805c3b3113
+8	889	7314450355815347	CMakeFiles/lab6_.dir/Car.cpp.obj	f00f2fbf0c3bab03
+17	1083	7314450357765053	CMakeFiles/lab6_.dir/validator.cpp.obj	25263c2d0796dfc
+1	1430	7314450361223945	CMakeFiles/lab6_.dir/main.cpp.obj	2ac75fe8c877079b
+32	1465	7314450361580062	CMakeFiles/lab6_.dir/LstMasina.cpp.obj	a8f60e779e9b90c5
+22	1566	7314450362584122	CMakeFiles/lab6_.dir/Repo.cpp.obj	924b726ffbadd5ad
+13	1629	7314450363246904	CMakeFiles/lab6_.dir/UI.cpp.obj	1af893447ec08e8a
+27	1864	7314450365579538	CMakeFiles/lab6_.dir/Service.cpp.obj	d69d353a55c026c0
+1864	2096	7314450367866612	lab6_.exe	a90ecece7e6ca827

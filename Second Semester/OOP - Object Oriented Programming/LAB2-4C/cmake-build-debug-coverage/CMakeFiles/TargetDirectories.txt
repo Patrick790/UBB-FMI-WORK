@@ -1,0 +1,3 @@
+/mnt/c/Users/ardel/CLionProjects/lab2-4agentie/cmake-build-debug-coverage/CMakeFiles/lab2_4agentie.dir
+/mnt/c/Users/ardel/CLionProjects/lab2-4agentie/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+/mnt/c/Users/ardel/CLionProjects/lab2-4agentie/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir

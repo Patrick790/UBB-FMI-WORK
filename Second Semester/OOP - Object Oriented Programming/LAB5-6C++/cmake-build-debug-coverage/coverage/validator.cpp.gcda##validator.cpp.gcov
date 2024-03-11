@@ -1,0 +1,501 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/validator.cpp
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\validator.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "validator.h"
+        -:    2:
+        -:    3:
+function _ZN12carValidator8validateERK3Car called 35 returned 86% blocks executed 87%
+       35:    4:void carValidator::validate(const Car &c) {
+       35:    5:    vector<string> msgs;
+       35:    5-block  0
+call    0 returned 35
+       35:    6:    if(c.getRegistrationNumber().size() < 8)
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:    6-block  0
+call    3 returned 35
+call    4 returned 35
+branch  5 taken 1 (fallthrough)
+branch  6 taken 34
+        1:    7:        msgs.emplace_back("Invalid registration number!");
+        1:    7-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       35:    8:    if(c.getProducer().empty())
+       35:    8-block  0
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:    8-block  1
+call    3 returned 35
+call    4 returned 35
+branch  5 taken 2 (fallthrough)
+branch  6 taken 33
+        2:    9:        msgs.emplace_back("Invalid producer!");
+        2:    9-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   10:    if(c.getModel().empty())
+       35:   10-block  0
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   10-block  1
+call    3 returned 35
+call    4 returned 35
+branch  5 taken 1 (fallthrough)
+branch  6 taken 34
+        1:   11:        msgs.emplace_back("Invalid model!");
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   12:    if(c.getType().empty())
+       35:   12-block  0
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   12-block  1
+call    3 returned 35
+call    4 returned 35
+branch  5 taken 1 (fallthrough)
+branch  6 taken 34
+        1:   13:        msgs.emplace_back("Invalid type!");
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   14:    if (!msgs.empty()) {
+       35:   14-block  0
+call    0 returned 35
+branch  1 taken 5 (fallthrough)
+branch  2 taken 30
+        5:   15:        throw validateException(msgs);
+        5:   15-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   15-block  1
+call    4 returned 5
+branch  5 taken 5 (fallthrough)
+branch  6 taken 0 (throw)
+        5:   15-block  2
+call    7 returned 5
+call    8 returned 5
+    $$$$$:   15-block  3
+call    9 never executed
+    $$$$$:   15-block  4
+    $$$$$:   15-block  5
+call   10 never executed
+        -:   16:    }
+        -:   17:
+       35:   18:}
+       30:   18-block  0
+call    0 returned 30
+        5:   18-block  1
+call    1 returned 5
+        -:   19:
+        -:   20:
+function _Z13testValidatorv called 1 returned 100% blocks executed 44%
+        1:   21:void testValidator(){
+        -:   22:    carValidator val;
+        -:   23:
+        2:   24:    Car car1{"CJ 21 NEO", "Volvo", "V50", "Combi"};
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   24-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   24-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   24-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   24-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   24-block  5
+    $$$$$:   24-block  6
+    $$$$$:   24-block  7
+    $$$$$:   24-block  8
+    $$$$$:   24-block  9
+    $$$$$:   24-block 10
+    $$$$$:   24-block 11
+    $$$$$:   24-block 12
+        1:   25:    val.validate(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   26:
+        2:   27:    Car c2{ "CJ 21 A", "Volvo", "V60", "Combi" };
+        1:   27-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   27-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   27-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   27-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   27-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   27-block  5
+    $$$$$:   27-block  6
+    $$$$$:   27-block  7
+    $$$$$:   27-block  8
+    $$$$$:   27-block  9
+    $$$$$:   27-block 10
+    $$$$$:   27-block 11
+    $$$$$:   27-block 12
+        -:   28:    try{
+        1:   29:        val.validate(c2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   30:    }
+        1:   31:    catch (validateException& ve){
+        1:   31-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   31-block  1
+call    2 returned 1
+        1:   32:        assert(ve.getErrorMessages() == "Invalid registration number!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:   32-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   32-block  2
+    $$$$$:   32-block  3
+        1:   32-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   32-block  5
+call   11 returned 1
+    $$$$$:   32-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   32-block  7
+call   14 never executed
+    $$$$$:   32-block  8
+        1:   33:    }
+        1:   33-block  0
+call    0 returned 1
+    $$$$$:   33-block  1
+call    1 never executed
+        -:   34:
+        2:   35:    Car c3{ "CJ 21 ABC", "", "V60", "Combi" };
+        1:   35-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   35-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   35-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   35-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   35-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   35-block  5
+    $$$$$:   35-block  6
+    $$$$$:   35-block  7
+    $$$$$:   35-block  8
+    $$$$$:   35-block  9
+    $$$$$:   35-block 10
+    $$$$$:   35-block 11
+    $$$$$:   35-block 12
+        -:   36:    try {
+        1:   37:        val.validate(c3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   38:    }
+        1:   39:    catch (validateException& e) {
+        1:   39-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   39-block  1
+call    2 returned 1
+        1:   40:        assert(e.getErrorMessages() == "Invalid producer!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:   40-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   40-block  2
+    $$$$$:   40-block  3
+        1:   40-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   40-block  5
+call   11 returned 1
+    $$$$$:   40-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   40-block  7
+call   14 never executed
+    $$$$$:   40-block  8
+        1:   41:    }
+        1:   41-block  0
+call    0 returned 1
+    $$$$$:   41-block  1
+call    1 never executed
+        -:   42:
+        2:   43:    Car c4{ "CJ 21 ABC", "Volvo", "", "Combi" };
+        1:   43-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   43-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   43-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   43-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   43-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   43-block  5
+    $$$$$:   43-block  6
+    $$$$$:   43-block  7
+    $$$$$:   43-block  8
+    $$$$$:   43-block  9
+    $$$$$:   43-block 10
+    $$$$$:   43-block 11
+    $$$$$:   43-block 12
+        -:   44:    try {
+        1:   45:        val.validate(c4);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   46:    }
+        1:   47:    catch (validateException& e) {
+        1:   47-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   47-block  1
+call    2 returned 1
+        1:   48:        assert(e.getErrorMessages() == "Invalid model!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   48-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:   48-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   48-block  2
+    $$$$$:   48-block  3
+        1:   48-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   48-block  5
+call   11 returned 1
+    $$$$$:   48-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   48-block  7
+call   14 never executed
+    $$$$$:   48-block  8
+        1:   49:    }
+        1:   49-block  0
+call    0 returned 1
+    $$$$$:   49-block  1
+call    1 never executed
+        -:   50:
+        2:   51:    Car c5{ "CJ 21 ABCD", "Volvo", "V60", "" };
+        1:   51-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   51-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   51-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   51-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   51-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   51-block  5
+    $$$$$:   51-block  6
+    $$$$$:   51-block  7
+    $$$$$:   51-block  8
+    $$$$$:   51-block  9
+    $$$$$:   51-block 10
+    $$$$$:   51-block 11
+    $$$$$:   51-block 12
+        -:   52:    try {
+        1:   53:        val.validate(c5);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   54:    }
+        1:   55:    catch (validateException& e) {
+        1:   55-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   55-block  1
+call    2 returned 1
+        1:   56:        assert(e.getErrorMessages() == "Invalid type!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:   56-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   56-block  2
+    $$$$$:   56-block  3
+        1:   56-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   56-block  5
+call   11 returned 1
+    $$$$$:   56-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   56-block  7
+call   14 never executed
+    $$$$$:   56-block  8
+        1:   57:    }
+        1:   57-block  0
+call    0 returned 1
+    $$$$$:   57-block  1
+call    1 never executed
+        -:   58:
+        1:   59:}
+        1:   59-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:   59-block  1
+call    5 never executed
+    $$$$$:   59-block  2
+call    6 never executed
+    $$$$$:   59-block  3
+call    7 never executed
+    $$$$$:   59-block  4
+call    8 never executed
+    $$$$$:   59-block  5
+call    9 never executed

@@ -1,0 +1,8 @@
+# ninja log v5
+1	200	7010365693984642	CMakeFiles/lab2_4agentie.dir/main.c.obj	e41efea8a0e873e1
+59	382	7010365694790150	CMakeFiles/lab2_4agentie.dir/Vector.c.obj	2be73308b03e284
+33	383	7010365695595608	CMakeFiles/lab2_4agentie.dir/UI.c.obj	ecc3806da151b1ca
+3	172	7010368530270195	CMakeFiles/lab2_4agentie.dir/OfertaRepository.c.obj	baa1f8c4a4bb8d0
+49	450	7010365696416151	CMakeFiles/lab2_4agentie.dir/Service.c.obj	f8e3b014aa8af01f
+14	156	7010365988000074	CMakeFiles/lab2_4agentie.dir/Oferta.c.obj	dc559f7196e52919
+173	375	7010368532221449	lab2_4agentie.exe	83a28674a2cfa6e1

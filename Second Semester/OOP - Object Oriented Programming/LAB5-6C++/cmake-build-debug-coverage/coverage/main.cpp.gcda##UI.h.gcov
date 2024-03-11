@@ -1,0 +1,37 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/UI.h
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Service.h"
+        -:    4:#include "Car.h"
+        -:    5:#include "Repo.h"
+        -:    6:
+        -:    7:class consoleUi {
+        -:    8:private:
+        -:    9:    carService& car;
+        -:   10:
+        -:   11:public:
+function _ZN9consoleUiC1ER10carService called 1 returned 100% blocks executed 100%
+        1:   12:    explicit consoleUi(carService& car) : car{car }{}
+        -:   13:    consoleUi(const consoleUi& ot) = delete;
+        -:   14:
+        -:   15:    static void printMenu();
+        -:   16:    void uiAdd();
+        -:   17:    void uiDelete();
+        -:   18:    void uiModify();
+        -:   19:    void uiFind();
+        -:   20:    void uiFilter();
+        -:   21:    void uiSort();
+        -:   22:    void uiAddToLista();
+        -:   23:    void uiAddRandomToLista();
+        -:   24:    void uiEmptyLista();
+        -:   25:    void uiListaMasina();
+        -:   26:    void addDefaultCars();
+        -:   27:    static void printCars(const vector<Car>& cars);
+        -:   28:    void run();
+        -:   29:
+        -:   30:
+        -:   31:    static void printSpalatorieMenu();
+        -:   32:};

@@ -1,0 +1,1349 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab6-/Repo.cpp
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Repo.cpp.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab6-\cmake-build-debug-coverage\CMakeFiles\lab6_.dir\Repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "Repo.h"
+        -:    3:#include <cassert>
+        -:    4:#include <iostream>
+        -:    5:#include <algorithm>
+        -:    6:
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+        -:   10:using std::ostream;
+        -:   11:using std::stringstream;
+        -:   12:
+        -:   13:
+function _ZN7CarRepo5existERK3Car called 39 returned 100% blocks executed 94%
+       39:   14:bool CarRepo::exist(const Car &c) {
+        -:   15:    try{
+       75:   16:        find(c.getRegistrationNumber());
+       39:   16-block  0
+call    0 returned 39
+branch  1 taken 39 (fallthrough)
+branch  2 taken 0 (throw)
+       39:   16-block  1
+call    3 returned 39
+branch  4 taken 3 (fallthrough)
+branch  5 taken 36 (throw)
+        3:   16-block  2
+call    6 returned 3
+       36:   16-block  3
+call    7 returned 36
+       36:   16-block  4
+        3:   17:        return true;
+        -:   18:    }
+       36:   19:    catch (CarRepoException) {
+       36:   19-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 36
+       36:   19-block  1
+call    2 returned 36
+call    3 returned 36
+       36:   20:        return false;
+       36:   21:    }
+call    0 returned 36
+call    1 returned 36
+branch  2 taken 36 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   22:}
+        -:   23:
+function _ZN7CarRepo4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 44 returned 16% blocks executed 63%
+       44:   24:const Car& CarRepo::find(const string& registrationNumber) {
+       44:   25:    auto f = std::find_if(this->cars.begin(), this->cars.end(),
+       44:   25-block  0
+call    0 returned 44
+branch  1 taken 44 (fallthrough)
+branch  2 taken 0 (throw)
+       44:   25-block  1
+call    3 returned 44
+call    4 returned 44
+call    5 returned 44
+branch  6 taken 44 (fallthrough)
+branch  7 taken 0 (throw)
+       44:   25-block  2
+call    8 returned 44
+    $$$$$:   25-block  3
+call    9 never executed
+    $$$$$:   25-block  4
+function _ZZN7CarRepo4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK3CarE_clESA_ called 75 returned 100% blocks executed 100%
+       75:   26:                                                  [=](const Car& c) {
+       75:   27:                                                      return c.getRegistrationNumber() == registrationNumber ;
+       75:   27-block  0
+call    0 returned 75
+call    1 returned 75
+call    2 returned 75
+        -:   28:                                                  });
+       44:   29:    if (f != this->cars.end())
+call    0 returned 44
+call    1 returned 44
+branch  2 taken 7 (fallthrough)
+branch  3 taken 37
+       14:   30:        return (*f);
+        7:   30-block  0
+call    0 returned 7
+        7:   30-block  1
+        -:   31:    else
+       37:   32:        throw CarRepoException("The car with registration number " + registrationNumber + " does not exist in the list");
+       37:   32-block  0
+call    0 returned 37
+call    1 returned 37
+branch  2 taken 37 (fallthrough)
+branch  3 taken 0 (throw)
+       37:   32-block  1
+call    4 returned 37
+branch  5 taken 37 (fallthrough)
+branch  6 taken 0 (throw)
+       37:   32-block  2
+call    7 returned 37
+branch  8 taken 37 (fallthrough)
+branch  9 taken 0 (throw)
+       37:   32-block  3
+call   10 returned 37
+call   11 returned 37
+call   12 returned 37
+    $$$$$:   32-block  4
+call   13 never executed
+    $$$$$:   32-block  5
+    $$$$$:   32-block  6
+call   14 never executed
+    $$$$$:   32-block  7
+    $$$$$:   32-block  8
+call   15 never executed
+        -:   33:}
+        -:   34:
+function _ZN7CarRepo5storeERK3Car called 37 returned 95% blocks executed 46%
+       37:   35:void CarRepo::store(const Car &c) {
+       37:   36:    if(exist(c)){
+       37:   36-block  0
+call    0 returned 37
+branch  1 taken 2 (fallthrough)
+branch  2 taken 35
+        2:   37:        throw CarRepoException("The car with registration number " + c.getRegistrationNumber() + " produced by " + c.getProducer() + " model " + c.getModel() + " type " + c.getType() + " already exists!");
+        2:   37-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   37-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   37-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:   37-block  3
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+        2:   37-block  4
+call   13 returned 2
+branch 14 taken 2 (fallthrough)
+branch 15 taken 0 (throw)
+        2:   37-block  5
+call   16 returned 2
+branch 17 taken 2 (fallthrough)
+branch 18 taken 0 (throw)
+        2:   37-block  6
+call   19 returned 2
+branch 20 taken 2 (fallthrough)
+branch 21 taken 0 (throw)
+        2:   37-block  7
+call   22 returned 2
+branch 23 taken 2 (fallthrough)
+branch 24 taken 0 (throw)
+        2:   37-block  8
+call   25 returned 2
+branch 26 taken 2 (fallthrough)
+branch 27 taken 0 (throw)
+        2:   37-block  9
+call   28 returned 2
+branch 29 taken 2 (fallthrough)
+branch 30 taken 0 (throw)
+        2:   37-block 10
+call   31 returned 2
+branch 32 taken 2 (fallthrough)
+branch 33 taken 0 (throw)
+        2:   37-block 11
+call   34 returned 2
+branch 35 taken 2 (fallthrough)
+branch 36 taken 0 (throw)
+        2:   37-block 12
+call   37 returned 2
+branch 38 taken 2 (fallthrough)
+branch 39 taken 0 (throw)
+        2:   37-block 13
+call   40 returned 2
+call   41 returned 2
+call   42 returned 2
+call   43 returned 2
+call   44 returned 2
+call   45 returned 2
+call   46 returned 2
+call   47 returned 2
+call   48 returned 2
+call   49 returned 2
+call   50 returned 2
+call   51 returned 2
+call   52 returned 0
+    $$$$$:   37-block 14
+call   53 never executed
+    $$$$$:   37-block 15
+    $$$$$:   37-block 16
+call   54 never executed
+    $$$$$:   37-block 17
+    $$$$$:   37-block 18
+call   55 never executed
+    $$$$$:   37-block 19
+    $$$$$:   37-block 20
+call   56 never executed
+    $$$$$:   37-block 21
+    $$$$$:   37-block 22
+call   57 never executed
+    $$$$$:   37-block 23
+    $$$$$:   37-block 24
+call   58 never executed
+    $$$$$:   37-block 25
+    $$$$$:   37-block 26
+call   59 never executed
+    $$$$$:   37-block 27
+    $$$$$:   37-block 28
+call   60 never executed
+    $$$$$:   37-block 29
+    $$$$$:   37-block 30
+call   61 never executed
+    $$$$$:   37-block 31
+    $$$$$:   37-block 32
+call   62 never executed
+    $$$$$:   37-block 33
+    $$$$$:   37-block 34
+call   63 never executed
+    $$$$$:   37-block 35
+    $$$$$:   37-block 36
+call   64 never executed
+    $$$$$:   37-block 37
+    $$$$$:   37-block 38
+call   65 never executed
+        -:   38:    }
+       35:   39:    this->cars.push_back(c);
+       35:   39-block  0
+call    0 returned 35
+       35:   40:}
+        -:   41:
+        -:   42:
+function _ZN7CarRepo6removeEi called 9 returned 100% blocks executed 75%
+        9:   43:void CarRepo::remove(int poz) {
+        9:   44:    this->cars.erase(cars.begin() + poz);
+        9:   44-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   44-block  1
+    $$$$$:   44-block  2
+        9:   45:}
+        9:   45-block  0
+        -:   46:
+function _ZN7CarRepo6modifyERK3Cari called 4 returned 100% blocks executed 100%
+        4:   47:void CarRepo::modify(const Car &c, int poz) {
+        4:   48:    this->cars[poz] = c;
+        4:   48-block  0
+call    0 returned 4
+call    1 returned 4
+        4:   49:}
+        -:   50:
+function _ZN7CarRepo10getAllCarsEv called 20 returned 100% blocks executed 100%
+       20:   51:vector<Car>& CarRepo::getAllCars() {
+       20:   52:    return this->cars;
+       20:   52-block  0
+        -:   53:}
+        -:   54:
+        -:   55:
+        -:   56:/*void testAddRepo(){
+        -:   57:
+        -:   58:    CarRepo testRepo;
+        -:   59:
+        -:   60:    Car car1{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+        -:   61:    testRepo.store(car1);
+        -:   62:    assert(testRepo.getAllCars().size() == 1);
+        -:   63:
+        -:   64:    Car car2{ "CJ 12 OHJ", "Renault", "Austral", "SUV"};
+        -:   65:    Car car3{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+        -:   66:    try{
+        -:   67:        testRepo.store(car3);
+        -:   68:        assert(false);
+        -:   69:    }
+        -:   70:    catch (CarRepoException) {
+        -:   71:        assert(true);
+        -:   72:    }
+        -:   73:
+        -:   74:    Car car4{ "CJ 12 OHJ", "Renault", "Austral", "SUV"};
+        -:   75:    Car car5{ "CJ 78 PSH", "Skoda", "Octavia", "Sedan"};
+        -:   76:    testRepo.store(car4);
+        -:   77:    testRepo.store(car5);
+        -:   78:    assert(testRepo.getAllCars().size() == 3);
+        -:   79:    assert(testRepo.exist(car1));
+        -:   80:    assert(testRepo.exist(car4));
+        -:   81:    assert(testRepo.exist(car5));
+        -:   82:}*/
+        -:   83:
+function _Z11testAddRepov called 1 returned 100% blocks executed 46%
+        1:   84:void testAddRepo(){
+        1:   85:    CarRepo testRepo;
+        1:   85-block  0
+call    0 returned 1
+        -:   86:
+        2:   87:    Car car1{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   87-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   87-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   87-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   87-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   87-block  4
+    $$$$$:   87-block  5
+    $$$$$:   87-block  6
+    $$$$$:   87-block  7
+    $$$$$:   87-block  8
+    $$$$$:   87-block  9
+    $$$$$:   87-block 10
+    $$$$$:   87-block 11
+        -:   88:
+        1:   89:    testRepo.store(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   90:    assert(testRepo.getAllCars().size() == 1);
+        1:   90-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   90-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        1:   90-block  2
+    %%%%%:   90-block  3
+        -:   91:
+        2:   92:    Car car2{ "MM 13 VSO", "Opel", "Astra", "Sedan"};
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   92-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   92-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   92-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   92-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   92-block  5
+    $$$$$:   92-block  6
+    $$$$$:   92-block  7
+    $$$$$:   92-block  8
+    $$$$$:   92-block  9
+    $$$$$:   92-block 10
+    $$$$$:   92-block 11
+    $$$$$:   92-block 12
+        2:   93:    Car car3{ "CJ 21 NEO", "Volvo", "V50", "Combi" };
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   93-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   93-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   93-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   93-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:   93-block  4
+    $$$$$:   93-block  5
+    $$$$$:   93-block  6
+    $$$$$:   93-block  7
+    $$$$$:   93-block  8
+    $$$$$:   93-block  9
+    $$$$$:   93-block 10
+    $$$$$:   93-block 11
+        -:   94:    try{
+        1:   95:        testRepo.store(car3);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   96:    }
+        1:   97:    catch (CarRepoException){
+        1:   97-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   97-block  1
+call    2 returned 1
+call    3 returned 1
+        -:   98:        assert(true);
+        1:   99:    }
+call    0 returned 1
+call    1 returned 1
+        -:  100:
+        1:  101:}
+        1:  101-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  101-block  1
+call    4 never executed
+    $$$$$:  101-block  2
+call    5 never executed
+    $$$$$:  101-block  3
+call    6 never executed
+    $$$$$:  101-block  4
+call    7 never executed
+        -:  102:
+        -:  103:
+        -:  104:
+function _Z12testFindRepov called 1 returned 100% blocks executed 45%
+        1:  105:void testFindRepo(){
+        1:  106:    CarRepo testRepo;
+        1:  106-block  0
+call    0 returned 1
+        2:  107:    Car car1{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  107-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  107-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  107-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  107-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  107-block  4
+    $$$$$:  107-block  5
+    $$$$$:  107-block  6
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+    $$$$$:  107-block 11
+        2:  108:    Car car2{ "MM 13 VSO", "Opel", "Astra", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  108-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  108-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  108-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  108-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  108-block  4
+    $$$$$:  108-block  5
+    $$$$$:  108-block  6
+    $$$$$:  108-block  7
+    $$$$$:  108-block  8
+    $$$$$:  108-block  9
+    $$$$$:  108-block 10
+    $$$$$:  108-block 11
+        2:  109:    Car car3{ "CJ 78 PSH", "Skoda", "Octavia", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  109-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  109-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  109-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  109-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  109-block  4
+    $$$$$:  109-block  5
+    $$$$$:  109-block  6
+    $$$$$:  109-block  7
+    $$$$$:  109-block  8
+    $$$$$:  109-block  9
+    $$$$$:  109-block 10
+    $$$$$:  109-block 11
+        2:  110:    Car car4{ "CJ 12 OHJ", "Renault", "Austral", "SUV"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  110-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  110-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  110-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  110-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  110-block  4
+    $$$$$:  110-block  5
+    $$$$$:  110-block  6
+    $$$$$:  110-block  7
+    $$$$$:  110-block  8
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+    $$$$$:  110-block 11
+        2:  111:    Car car5{ "CJ 79 ADF", "Skoda", "Superb", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  111-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  111-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  111-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  111-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  111-block  4
+    $$$$$:  111-block  5
+    $$$$$:  111-block  6
+    $$$$$:  111-block  7
+    $$$$$:  111-block  8
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+    $$$$$:  111-block 11
+        1:  112:    testRepo.store(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  113:    testRepo.store(car2);
+        1:  113-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  114:    testRepo.store(car4);
+        1:  114-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  115:
+       1*:  116:    assert(testRepo.exist(car1));
+        1:  116-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  116-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  116-block  2
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+        1:  116-block  3
+    %%%%%:  116-block  4
+       1*:  117:    assert(!testRepo.exist(car3));
+        1:  117-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  117-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  117-block  2
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+        1:  117-block  3
+    %%%%%:  117-block  4
+        1:  118:    testRepo.remove(1);
+        1:  118-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119:    testRepo.modify(car5, 1);
+        1:  119-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  120:    testRepo.modify(car4,1);
+        1:  120-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  121:
+        2:  122:    auto foundCar = testRepo.find("CJ 21 NEO");
+        1:  122-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  122-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  122-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+    $$$$$:  122-block  3
+    $$$$$:  122-block  4
+       1*:  123:    assert(foundCar.getRegistrationNumber() == "CJ 21 NEO");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  123-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  123-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  123-block  2
+    %%%%%:  123-block  3
+        1:  123-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  123-block  5
+call   11 returned 1
+    $$$$$:  123-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  123-block  7
+call   14 never executed
+    $$$$$:  123-block  8
+       1*:  124:    assert(foundCar.getProducer() == "Volvo");
+        1:  124-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  124-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  124-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  124-block  3
+    %%%%%:  124-block  4
+        1:  124-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  124-block  6
+call   11 returned 1
+    $$$$$:  124-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  124-block  8
+call   14 never executed
+    $$$$$:  124-block  9
+       1*:  125:    assert(foundCar.getModel() == "V50");
+        1:  125-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  125-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  125-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  125-block  3
+    %%%%%:  125-block  4
+        1:  125-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  125-block  6
+call   11 returned 1
+    $$$$$:  125-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  125-block  8
+call   14 never executed
+    $$$$$:  125-block  9
+       1*:  126:    assert(foundCar.getType() == "Combi");
+        1:  126-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  126-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  126-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  126-block  3
+    %%%%%:  126-block  4
+        1:  126-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  126-block  6
+call   11 returned 1
+    $$$$$:  126-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  126-block  8
+call   14 never executed
+    $$$$$:  126-block  9
+        -:  127:
+        1:  128:}
+        1:  128-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:  128-block  1
+call    7 never executed
+    $$$$$:  128-block  2
+call    8 never executed
+    $$$$$:  128-block  3
+call    9 never executed
+    $$$$$:  128-block  4
+call   10 never executed
+    $$$$$:  128-block  5
+call   11 never executed
+    $$$$$:  128-block  6
+call   12 never executed
+    $$$$$:  128-block  7
+call   13 never executed
+        -:  129:
+function _Z14testDeleteRepov called 1 returned 100% blocks executed 45%
+        1:  130:void testDeleteRepo(){
+        -:  131:
+        1:  132:    CarRepo testRepo;
+        1:  132-block  0
+call    0 returned 1
+        -:  133:
+        2:  134:    Car car1{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  134-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  134-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  134-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  134-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  134-block  4
+    $$$$$:  134-block  5
+    $$$$$:  134-block  6
+    $$$$$:  134-block  7
+    $$$$$:  134-block  8
+    $$$$$:  134-block  9
+    $$$$$:  134-block 10
+    $$$$$:  134-block 11
+        2:  135:    Car car2{ "MM 13 VSO", "Opel", "Astra", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  135-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  135-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  135-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  135-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  135-block  4
+    $$$$$:  135-block  5
+    $$$$$:  135-block  6
+    $$$$$:  135-block  7
+    $$$$$:  135-block  8
+    $$$$$:  135-block  9
+    $$$$$:  135-block 10
+    $$$$$:  135-block 11
+        2:  136:    Car car3{ "CJ 78 PSH", "Skoda", "Octavia", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  136-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  136-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  136-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  136-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  136-block  4
+    $$$$$:  136-block  5
+    $$$$$:  136-block  6
+    $$$$$:  136-block  7
+    $$$$$:  136-block  8
+    $$$$$:  136-block  9
+    $$$$$:  136-block 10
+    $$$$$:  136-block 11
+        1:  137:    testRepo.store(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  138:    testRepo.store(car2);
+        1:  138-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  139:
+       1*:  140:    assert(testRepo.getAllCars().size() == 2);
+        1:  140-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  140-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        1:  140-block  2
+    %%%%%:  140-block  3
+        1:  141:    testRepo.remove(1);
+        1:  141-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  142:    assert(testRepo.getAllCars().size() == 1);
+        1:  142-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  142-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        1:  142-block  2
+    %%%%%:  142-block  3
+        -:  143:
+        1:  144:}
+        1:  144-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  144-block  1
+call    4 never executed
+    $$$$$:  144-block  2
+call    5 never executed
+    $$$$$:  144-block  3
+call    6 never executed
+    $$$$$:  144-block  4
+call    7 never executed
+        -:  145:
+function _Z14testModifyRepov called 1 returned 100% blocks executed 45%
+        1:  146:void testModifyRepo() {
+        1:  147:    CarRepo testRepo;
+        1:  147-block  0
+call    0 returned 1
+        -:  148:
+        2:  149:    Car car1{ "CJ 21 NEO", "Volvo", "V50", "Combi"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  149-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  149-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  149-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  149-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  149-block  4
+    $$$$$:  149-block  5
+    $$$$$:  149-block  6
+    $$$$$:  149-block  7
+    $$$$$:  149-block  8
+    $$$$$:  149-block  9
+    $$$$$:  149-block 10
+    $$$$$:  149-block 11
+        2:  150:    Car car2{ "MM 13 VSO", "Opel", "Astra", "Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  150-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  150-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  150-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  150-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  150-block  4
+    $$$$$:  150-block  5
+    $$$$$:  150-block  6
+    $$$$$:  150-block  7
+    $$$$$:  150-block  8
+    $$$$$:  150-block  9
+    $$$$$:  150-block 10
+    $$$$$:  150-block 11
+        1:  151:    testRepo.store(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  152:    testRepo.store(car2);
+        1:  152-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  153:
+        2:  154:    Car modifiedCar{ "CJ 21 NEO", "Volvo", "XC60", "SUV"};
+        1:  154-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  154-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  154-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  154-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  154-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+    $$$$$:  154-block  5
+    $$$$$:  154-block  6
+    $$$$$:  154-block  7
+    $$$$$:  154-block  8
+    $$$$$:  154-block  9
+    $$$$$:  154-block 10
+    $$$$$:  154-block 11
+    $$$$$:  154-block 12
+        1:  155:    testRepo.modify(modifiedCar, 0);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  156:
+        2:  157:    auto foundCar = testRepo.find("CJ 21 NEO");
+        1:  157-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  157-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  157-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+    $$$$$:  157-block  3
+    $$$$$:  157-block  4
+       1*:  158:    assert(foundCar.getRegistrationNumber() == "CJ 21 NEO");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  158-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  158-block  2
+    %%%%%:  158-block  3
+        1:  158-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  158-block  5
+call   11 returned 1
+    $$$$$:  158-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  158-block  7
+call   14 never executed
+    $$$$$:  158-block  8
+       1*:  159:    assert(foundCar.getProducer() == "Volvo");
+        1:  159-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  159-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  159-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  159-block  3
+    %%%%%:  159-block  4
+        1:  159-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  159-block  6
+call   11 returned 1
+    $$$$$:  159-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  159-block  8
+call   14 never executed
+    $$$$$:  159-block  9
+       1*:  160:    assert(foundCar.getModel() == "XC60");
+        1:  160-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  160-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  160-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  160-block  3
+    %%%%%:  160-block  4
+        1:  160-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  160-block  6
+call   11 returned 1
+    $$$$$:  160-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  160-block  8
+call   14 never executed
+    $$$$$:  160-block  9
+       1*:  161:    assert(foundCar.getType() == "SUV");
+        1:  161-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  161-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  161-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  161-block  3
+    %%%%%:  161-block  4
+        1:  161-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  161-block  6
+call   11 returned 1
+    $$$$$:  161-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  161-block  8
+call   14 never executed
+    $$$$$:  161-block  9
+        1:  162:}
+        1:  162-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  162-block  1
+call    5 never executed
+    $$$$$:  162-block  2
+call    6 never executed
+    $$$$$:  162-block  3
+call    7 never executed
+    $$$$$:  162-block  4
+call    8 never executed
+    $$$$$:  162-block  5
+call    9 never executed
+        -:  163:
+        -:  164:
+        -:  165:
+        -:  166:
+        -:  167:
+function _Z8testRepov called 1 returned 100% blocks executed 100%
+        1:  168:void testRepo(){
+        1:  169:    testAddRepo();
+        1:  169-block  0
+call    0 returned 1
+        1:  170:    testFindRepo();
+call    0 returned 1
+        1:  171:    testDeleteRepo();
+call    0 returned 1
+        1:  172:    testModifyRepo();
+call    0 returned 1
+        1:  173:}
+        -:  174:
+        -:  175:
+        -:  176:

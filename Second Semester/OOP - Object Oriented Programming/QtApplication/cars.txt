@@ -1,0 +1,6 @@
+CJ 21 NEO,Mazda,3,Sedan
+MM 13 VSO,Opel,Astra,Sedan
+CJ 78 PSH,Skoda,Octavia,Sedan
+CJ 99 DNG,Mazda,CX-30,SUV
+GJ 22 PAT,Mazda,CX-5,SUV
+CJ 08 POL,Land Rover,Freelander,SUV

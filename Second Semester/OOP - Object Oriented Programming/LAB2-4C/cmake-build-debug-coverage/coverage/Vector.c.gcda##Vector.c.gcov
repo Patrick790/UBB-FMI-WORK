@@ -1,0 +1,271 @@
+        -:    0:Source:C:/Users/ardel/CLionProjects/lab2-4agentie/Vector.c
+        -:    0:Graph:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\Vector.c.gcno
+        -:    0:Data:C:\Users\ardel\CLionProjects\lab2-4agentie\cmake-build-debug-coverage\CMakeFiles\lab2_4agentie.dir\Vector.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Vector.h"
+        -:    2:#include "Oferta.h"
+        -:    3:#include <stdlib.h>
+        -:    4:#include <assert.h>
+        -:    5:
+        -:    6:
+function createVector called 38 returned 100% blocks executed 75%
+       38:    7:Vector* createVector(int capacity, DestroyElementFunctionType destroyElemFct)
+        -:    8:{
+       38:    9:    Vector* da = (Vector*)malloc(sizeof(Vector));
+        -:   10:
+       38:   11:    da->capacity = capacity;
+       38:   12:    da->length = 0;
+        -:   13:
+       38:   14:    da->elems = (TElement*)malloc(capacity * sizeof(TElement));
+       38:   15:    if (da->elems == NULL)
+       38:   15-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 38
+    #####:   16:        return NULL;
+    %%%%%:   16-block  0
+        -:   17:
+       38:   18:    da->destroyElemFct = destroyElemFct;
+        -:   19:
+       38:   20:    return da;
+       38:   20-block  0
+        -:   21:}
+        -:   22:
+function destroyVector called 36 returned 100% blocks executed 100%
+       36:   23:void destroyVector(Vector* arr)
+        -:   24:{
+       36:   25:    if (arr == NULL)
+       36:   25-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 35
+        1:   26:        return;
+        1:   26-block  0
+        -:   27:
+       86:   28:    for (int i = 0; i < arr->length; i++)
+       35:   28-block  0
+       86:   28-block  1
+branch  0 taken 51
+branch  1 taken 35 (fallthrough)
+       51:   29:        arr->destroyElemFct(arr->elems[i]);
+       51:   29-block  0
+call    0 returned 51
+        -:   30:
+       35:   31:    free(arr->elems);
+       35:   32:    arr->elems = NULL;
+        -:   33:
+       35:   34:    free(arr);
+       35:   35:    arr = NULL;
+       35:   35-block  0
+        -:   36:}
+        -:   37:
+        -:   38:
+function resizeVector called 13 returned 100% blocks executed 83%
+       13:   39:int resizeVector(Vector* arr)
+        -:   40:{
+       13:   41:    if (arr == NULL)
+       13:   41-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 12
+        1:   42:        return -1;
+        1:   42-block  0
+        -:   43:
+       12:   44:    arr->capacity *= 2;
+        -:   45:
+       12:   46:    TElement* aux = (TElement*)realloc(arr->elems, arr->capacity * sizeof(TElement));
+       12:   47:    if (aux == NULL)
+       12:   47-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 12
+    #####:   48:        return - 1;
+    %%%%%:   48-block  0
+        -:   49:    //free(arr->elems);
+       12:   50:    arr->elems = aux;
+        -:   51:
+        -:   52:    // version 2 - allocate new memory, copy everything and deallocate the old memory
+        -:   53:    /*TElement* aux = (TElement*)malloc(arr->capacity * sizeof(TElement));
+        -:   54:    if (aux == NULL)
+        -:   55:        return -1;
+        -:   56:    for (int i = 0; i < getVectorLength(arr); i++)
+        -:   57:        aux[i] = arr->elems[i];*/
+        -:   58:    //free(arr->elems);
+        -:   59:    //arr->elems = aux;
+        -:   60:
+       12:   61:    return 0;
+       12:   61-block  0
+        -:   62:}
+        -:   63:
+function addTElement called 72 returned 100% blocks executed 88%
+       72:   64:void addTElement(Vector* arr, TElement t)
+        -:   65:{
+       72:   66:    if (arr == NULL)
+       72:   66-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 71
+        1:   67:        return;
+        1:   67-block  0
+       71:   68:    if (arr->elems == NULL)
+       71:   68-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 71
+    #####:   69:        return;
+    %%%%%:   69-block  0
+        -:   70:
+       71:   71:    if (arr->length == arr->capacity)
+       71:   71-block  0
+branch  0 taken 12 (fallthrough)
+branch  1 taken 59
+       12:   72:        resizeVector(arr);
+       12:   72-block  0
+call    0 returned 12
+       71:   73:    arr->elems[arr->length++] = t;
+       71:   73-block  0
+        -:   74:}
+        -:   75:
+function deleteTElement called 8 returned 100% blocks executed 100%
+        8:   76:void deleteTElement(Vector* arr, int pos)
+        -:   77:{
+        8:   78:    if (arr == NULL || pos < 0 || pos >= arr->length)
+        8:   78-block  0
+branch  0 taken 8 (fallthrough)
+branch  1 taken 0
+        8:   78-block  1
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0
+        8:   78-block  2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 7
+        1:   79:        return;
+        1:   79-block  0
+        -:   80:
+        7:   81:    arr->destroyElemFct(arr->elems[pos]);
+        7:   81-block  0
+call    0 returned 7
+        -:   82:
+        7:   83:    if (pos != arr->length - 1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 6
+        1:   84:        arr->elems[pos] = arr->elems[arr->length - 1];
+        1:   84-block  0
+        7:   85:    arr->length--;
+        7:   85-block  0
+        -:   86:
+        -:   87:}
+        -:   88:
+function getVectorLength called 51 returned 100% blocks executed 100%
+       51:   89:int getVectorLength(Vector* arr)
+        -:   90:{
+       51:   91:    if (arr == NULL)
+       51:   91-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 50
+        1:   92:        return -1;
+        1:   92-block  0
+        -:   93:
+       50:   94:    return arr->length;
+       50:   94-block  0
+        -:   95:}
+        -:   96:
+function swapTElemets called 4 returned 100% blocks executed 100%
+        4:   97:void swapTElemets(Vector* arr, int index1, int index2)
+        -:   98:{
+        4:   99:    if (arr == NULL)
+        4:   99-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        -:  100:    {
+        1:  101:        return;
+        1:  101-block  0
+        -:  102:    }
+        3:  103:    TElement* aux = arr->elems[index1];
+        3:  104:    arr->elems[index1] = arr->elems[index2];
+        3:  105:    arr->elems[index2] = aux;
+        3:  105-block  0
+        -:  106:}
+function get called 27 returned 100% blocks executed 100%
+       27:  107:TElement get(Vector* arr, int pos)
+        -:  108:{
+       27:  109:    if (arr == NULL || pos < 0)
+       27:  109-block  0
+branch  0 taken 26 (fallthrough)
+branch  1 taken 1
+       26:  109-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 26
+        1:  110:        return NULL;
+        1:  110-block  0
+       26:  111:    return arr->elems[pos];
+       26:  111-block  0
+        -:  112:}
+        -:  113:
+        -:  114:// ------------------------------------------------------------------------------------------------------------
+        -:  115:
+function testsVector called 1 returned 100% blocks executed 79%
+        1:  116:void testsVector()
+        -:  117:{
+        -:  118:    //Vector* v = createVector(10, destroyOferta);
+        -:  119:    //Oferta* o1;
+        -:  120:    //o1 = createOferta("a", "a", "a", 100);
+        -:  121:    //addTElement(v,o1);
+        -:  122:    ////destroyOferta(o1);
+        -:  123:    //destroyVector(v);
+        -:  124:
+        1:  125:    Vector* v = createVector(1, (DestroyElementFunctionType) destroyOferta);
+        1:  125-block  0
+call    0 returned 1
+        -:  126:    Oferta  *o1, *o2, *o3;
+        1:  127:    o1 = createOferta("a", "a", "a", 100);
+call    0 returned 1
+        1:  128:    o2 = createOferta("b", "b", "b", 200);
+call    0 returned 1
+        1:  129:    o3 = createOferta("c", "c", "c", 300);
+call    0 returned 1
+        1:  130:    addTElement(v, o1);
+call    0 returned 1
+        1:  131:    addTElement(v, o2);
+call    0 returned 1
+        1:  132:    addTElement(v, o3);
+call    0 returned 1
+        1:  133:    swapTElemets(v, 1, 2);
+call    0 returned 1
+        1:  134:    deleteTElement(v, 10);
+call    0 returned 1
+        1:  135:    destroyVector(v);
+call    0 returned 1
+       1*:  136:    assert(resizeVector(NULL) == -1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  136-block  0
+call    3 never executed
+        1:  136-block  1
+        1:  137:    swapTElemets(NULL, 1, 2);
+        1:  137-block  0
+call    0 returned 1
+       1*:  138:    assert(get(NULL, 10) == NULL);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  138-block  0
+call    3 never executed
+        1:  138-block  1
+       1*:  139:    assert(getVectorLength(NULL) == -1);
+        1:  139-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  139-block  1
+call    3 never executed
+        1:  139-block  2
+        1:  140:    addTElement(NULL, NULL);
+        1:  140-block  0
+call    0 returned 1
+        1:  141:    destroyVector(NULL);
+call    0 returned 1
+        -:  142:    /*Vector* v2 = createVector(3, destroyOferta);
+        -:  143:    addTElement(v2, o1);
+        -:  144:    addTElement(v2, o2);
+        -:  145:    addTElement(v2, o3);
+        -:  146:    destroyVector(v2);*/
+        -:  147:    /*Vector* v3 = createVector(SIZE_MAX, destroyOferta);
+        -:  148:    resizeVector(v3);
+        -:  149:    destroyVector(v3);*/
+        1:  150:}
