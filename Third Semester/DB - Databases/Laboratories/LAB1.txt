@@ -1,0 +1,66 @@
+Create database EchipaDeHandbal
+go
+use EchipaDeHandbal
+go
+
+CREATE TABLE Echipe
+(Eid INT PRIMARY KEY IDENTITY,
+Denumire varchar(100),
+Oras varchar(50))
+
+CREATE TABLE Jucatori
+(Jid INT PRIMARY KEY IDENTITY,
+Nume varchar(50),
+Prenume varchar(50),
+Pozitie varchar(50),
+Inaltime int,
+Varsta int,
+Eid int FOREIGN KEY REFERENCES Echipe(Eid))
+
+CREATE TABLE Antrenamente
+(Antid INT PRIMARY KEY IDENTITY,
+Tip varchar(50),
+Durata int)
+
+CREATE TABLE JucatoriAntrenamente
+(Jid INT FOREIGN KEY REFERENCES Jucatori(Jid),
+Antid INT FOREIGN KEY REFERENCES Antrenamente(Antid),
+CONSTRAINT pk_JucatoriAntrenamente PRIMARY KEY(Jid,Antid))
+
+
+CREATE TABLE Antrenori
+(Aid INT PRIMARY KEY IDENTITY,
+Nume varchar(50),
+Prenume varchar(50),
+Rol varchar(50),
+Eid int FOREIGN KEY REFERENCES Echipe(Eid))
+
+
+CREATE TABLE Mascote
+(Msid INT FOREIGN KEY REFERENCES Echipe(Eid),
+Nume varchar(50) NOT NULL,
+CONSTRAINT pk_EchipeMascote PRIMARY KEY(Msid))
+
+
+CREATE TABLE Competitii
+(Cid INT PRIMARY KEY,
+Denumire varchar(50))
+
+CREATE TABLE Meciuri
+(Mid INT PRIMARY KEY IDENTITY,
+Echipe varchar(50),
+Scor varchar(50),
+NrSpectatori int,
+Cid int FOREIGN KEY REFERENCES Competitii(Cid)
+)
+
+CREATE TABLE EchipeCompetitii
+(Eid INT FOREIGN KEY REFERENCES Echipe(Eid),
+Cid INT FOREIGN KEY REFERENCES Competitii(Cid),
+CONSTRAINT pk_EchipeCompetitii PRIMARY KEY(Eid, Cid))
+
+CREATE TABLE Echipamente
+(Ecid INT PRIMARY KEY IDENTITY,
+Numar int NOT NULL,
+Marime varchar(10) NOT NULL,
+Jid INT FOREIGN KEY REFERENCES Jucatori(Jid))

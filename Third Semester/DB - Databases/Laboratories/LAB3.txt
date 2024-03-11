@@ -1,0 +1,174 @@
+USE EchipaDeHandbal
+GO
+
+
+CREATE TABLE Versiuni (
+    Vid INT PRIMARY KEY
+);
+
+-- Procedura pentru modificarea tipului coloanei
+CREATE PROCEDURE V1
+AS
+BEGIN
+    ALTER TABLE Jucatori
+    ALTER COLUMN Nume CHAR(50);
+	PRINT 'veriunea 1 ok'
+    
+END;
+
+
+
+-- Procedura pentru a reveni la tipul original al coloanei
+CREATE PROCEDURE V1R
+AS
+BEGIN
+    ALTER TABLE Jucatori
+    ALTER COLUMN Nume VARCHAR(50);
+	PRINT 'reverse versiunea 1 ok'
+
+END;
+
+
+-- Procedura pentru adăugarea unei constrângeri de valoare implicită
+CREATE PROCEDURE V2
+AS
+BEGIN
+    ALTER TABLE Echipe
+    ADD CONSTRAINT DF_ValoareImplicita DEFAULT 'Valoare Implicita' FOR Oras;
+	PRINT 'veriunea 2 ok'
+
+END;
+
+
+
+-- Procedura pentru eliminarea constrângerii de valoare implicită
+CREATE PROCEDURE V2R
+AS
+BEGIN
+    ALTER TABLE Echipe
+    DROP CONSTRAINT DF_ValoareImplicita;
+	PRINT 'reverse versiunea 2 ok'
+END;
+
+
+-- Procedura pentru crearea unei noi tabele
+CREATE PROCEDURE V3
+AS
+BEGIN
+    CREATE TABLE Tabela
+    (
+        Tid INT PRIMARY KEY,
+        Col1 VARCHAR(50),
+        Col2 INT
+    );
+	PRINT 'versiunea 3 ok'
+
+END;
+
+
+-- Procedura pentru ștergerea tabelei
+CREATE PROCEDURE V3R
+AS
+BEGIN
+    DROP TABLE Tabela;
+	PRINT 'reverse versiunea 3 ok'
+
+END;
+
+
+-- Procedura pentru adăugarea unui nou câmp
+CREATE PROCEDURE V4
+AS
+BEGIN
+    ALTER TABLE Meciuri
+    ADD Data DATE;
+	PRINT 'versiunea 4 ok'
+
+END;
+
+
+
+-- Procedura pentru ștergerea unui câmp nou
+CREATE PROCEDURE V4R
+AS
+BEGIN
+    ALTER TABLE Meciuri
+    DROP COLUMN Data;
+	PRINT 'reverse versiunea 4 ok'
+
+END;
+
+
+-- Procedura pentru crearea unei constrângeri de cheie străină
+CREATE PROCEDURE V5
+AS
+BEGIN
+    ALTER TABLE Echipamente
+    ADD CONSTRAINT FK_Echipamente_Jucatori FOREIGN KEY (Jid) REFERENCES Jucatori(Jid);
+	PRINT 'versiunea 5 ok'
+
+    
+END;
+
+
+
+-- Procedura pentru eliminarea unei constrângeri de cheie străină
+CREATE PROCEDURE V5R
+AS
+BEGIN
+    ALTER TABLE Echipamente
+    DROP CONSTRAINT FK_Echipamente_Jucatori;
+	PRINT 'reverse versiunea 5 ok'
+
+END;
+
+
+INSERT INTO VERSIUNI(Vid) VALUES (0);
+SELECT * FROM Versiuni
+
+
+CREATE PROCEDURE main
+@vers int
+AS
+BEGIN
+DECLARE @actual_version as INT
+SET @actual_version = (SELECT Vid from VERSIUNI)
+IF @vers > 5 OR @vers < 0 OR @actual_version = @vers
+	BEGIN
+		PRINT 'versiunea nu exista sau e egala'
+	END
+ELSE
+	BEGIN
+		DECLARE @diferenta_versiune as INT
+		SET @diferenta_versiune = @vers - @actual_version
+		IF  @diferenta_versiune > 0
+		BEGIN
+			SET @actual_version = @actual_version + 1
+			while (@actual_version <= @vers)
+			BEGIN
+				DECLARE @ProcedureName NVARCHAR(100);
+				SET @ProcedureName = 'V' + CAST(@actual_version AS VARCHAR);
+				EXEC @ProcedureName
+				SET @actual_version = @actual_version + 1
+			END
+			DELETE FROM VERSIUNI
+			INSERT INTO VERSIUNI(Vid) VALUES (@actual_version - 1)
+
+		END
+		ELSE
+		BEGIN
+			while (@actual_version > @vers)
+			BEGIN
+	
+				SET @ProcedureName = 'V' + CAST(@actual_version AS VARCHAR) + 'R';
+				EXEC @ProcedureName
+				SET @actual_version = @actual_version - 1
+			END
+			DELETE FROM VERSIUNI
+			INSERT INTO VERSIUNI(Vid) VALUES (@actual_version)
+		END
+	END
+END
+
+
+EXEC main 0
