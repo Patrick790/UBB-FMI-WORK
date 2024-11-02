@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1", "name": "Dika Mem", "team": "Barcelona", "position": "Right back",
+    "height": 193, "birthDate": "1996-06-12", "isCaptain": false
+  },
+  {
+    "id": "2", "name": "Nikola Karabatic", "team": "PSG", "position": "Center back",
+    "height": 198, "birthDate": "1986-08-22", "isCaptain": true
+  }
+
+]
