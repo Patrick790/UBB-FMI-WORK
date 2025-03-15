@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotecaiss.controller.LibrariansController">
+    <children>
+        <TableView fx:id="restituiriTableView" layoutX="29.0" layoutY="55.0" prefHeight="319.0" prefWidth="392.0">
+            <columns>
+                <TableColumn fx:id="bSubscriberColumn" prefWidth="75.0" text="Subscriber" />
+                <TableColumn fx:id="bTitleColumn" prefWidth="100.0" text="Titlu exemplar" />
+                <TableColumn fx:id="bStatusColumn" prefWidth="100.0" text="Status" />
+            <TableColumn fx:id="bDataColumn" prefWidth="116.0" text="Data" />
+            </columns>
+        </TableView>
+        <Button id="adaugaCarte" layoutX="461.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleAddBook" prefHeight="25.0" prefWidth="110.0" text="Adauga carte" />
+        <Label id="teamLabel" layoutX="323.0" layoutY="74.0" />
+        <TextField fx:id="titleField" layoutX="486.0" layoutY="34.0" />
+        <Button fx:id="logoutButton" layoutX="461.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="70.0" text="Logout" />
+        <Label layoutX="176.0" layoutY="26.0" text="Restituiri" textFill="#942d90">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+      <Label layoutX="454.0" layoutY="36.0" text="Titlu" />
+      <Button fx:id="deleteBookButton" layoutX="461.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="25.0" prefWidth="110.0" text="Sterge carte" />
+      <Button fx:id="acceptReturnButton" layoutX="462.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleAcceptReturn" text="Accepta restituire" />
+      <TableView fx:id="booksTableView" layoutX="736.0" layoutY="54.0" prefHeight="319.0" prefWidth="225.0">
+        <columns>
+          <TableColumn fx:id="bookId" prefWidth="38.0" text="id" />
+          <TableColumn fx:id="bookTitle" prefWidth="141.0" text="Titlu" />
+            <TableColumn fx:id="quantity" prefWidth="44.0" text="Cant" />
+        </columns>
+      </TableView>
+      <Label layoutX="833.0" layoutY="26.0" text="Carti" textFill="#942d90">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="refuseButton" layoutX="591.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleRefuseReturn" text="Refuza restituire" />
+      <Button fx:id="modifyBookButton" layoutX="583.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleModifyBook" prefHeight="25.0" prefWidth="117.0" text="Actualizeaza carte" />
+      <TextField fx:id="authorField" layoutX="486.0" layoutY="62.0" />
+      <Label layoutX="450.0" layoutY="66.0" text="Autor" />
+      <Label layoutX="430.0" layoutY="100.0" text="Cantitate" />
+      <TextField fx:id="quantityField" layoutX="486.0" layoutY="96.0" />
+    </children>
+</AnchorPane>

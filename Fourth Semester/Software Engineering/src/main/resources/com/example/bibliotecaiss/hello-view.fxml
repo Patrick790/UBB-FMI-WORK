@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotecaiss.controller.SubscribersController">
+    <children>
+        <TableView id="tableViewExemplare" fx:id="ExemplareTableView" layoutX="8.0" layoutY="55.0" prefHeight="319.0" prefWidth="316.0">
+            <columns>
+                <TableColumn fx:id="titluColumn" prefWidth="149.0" text="Titlu" />
+                <TableColumn fx:id="autorColumn" prefWidth="113.0" text="Autor" />
+                <TableColumn fx:id="disponibilitateColumn" prefWidth="53.0" text="Nr" />
+            </columns>
+        </TableView>
+        <Button fx:id="searchButton" layoutX="335.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="83.0" text="Search" />
+        <Label id="teamLabel" layoutX="335.0" layoutY="59.0" text="Titlu" />
+        <TextField fx:id="titleField" layoutX="366.0" layoutY="55.0" />
+        <Button fx:id="logoutButton" layoutX="446.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+      <Label layoutX="138.0" layoutY="24.0" text="Exemplare" textFill="#942d90">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="borrowButton" layoutX="335.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleBorrow" text="Imprumutare exemplar" />
+      <Button fx:id="restituireButton" layoutX="334.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleReturn" text="Restituire exemplar" />
+      <TableView id="tableViewImprumuturi" fx:id="borrowingsTableView" layoutX="533.0" layoutY="57.0" prefHeight="319.0" prefWidth="351.0">
+        <columns>
+          <TableColumn fx:id="bTitleColumn" prefWidth="136.0" text="Titlu" />
+          <TableColumn fx:id="bDataColumn" prefWidth="131.0" text="Data" />
+            <TableColumn fx:id="bStatusColumn" prefWidth="82.0" text="Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="666.0" layoutY="24.0" text="Imprumuturi" textFill="#942d90">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="terminalChoiceBox" layoutX="329.0" layoutY="217.0" prefWidth="150.0" />
+      <Button fx:id="resetButton" layoutX="426.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleReset" text="Reset" />
+    </children>
+</AnchorPane>
