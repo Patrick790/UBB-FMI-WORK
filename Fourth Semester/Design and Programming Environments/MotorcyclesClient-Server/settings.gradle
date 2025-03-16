@@ -1,0 +1,10 @@
+rootProject.name = "MotorcyclesClient-Server"
+include 'MotorcyclesClient'
+include 'MotorcyclesModel'
+include 'MotorcyclesPersistence'
+include 'MotorcyclesServices'
+include 'MotorcyclesServer'
+include 'MotorcyclesNetworking'
+include 'MotorcyclesClientFX'
+include 'MotorcyclesClientFX'
+
