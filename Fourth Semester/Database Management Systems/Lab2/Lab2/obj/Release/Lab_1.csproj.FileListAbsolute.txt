@@ -1,0 +1,10 @@
+C:\Users\ardel\source\repos\Lab2\Lab2\bin\Release\Lab_1.exe.config
+C:\Users\ardel\source\repos\Lab2\Lab2\bin\Release\Lab_1.exe
+C:\Users\ardel\source\repos\Lab2\Lab2\bin\Release\Lab_1.pdb
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.csproj.AssemblyReference.cache
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.Form1.resources
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.Properties.Resources.resources
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.csproj.GenerateResource.cache
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.csproj.CoreCompileInputs.cache
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.exe
+C:\Users\ardel\source\repos\Lab2\Lab2\obj\Release\Lab_1.pdb
