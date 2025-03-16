@@ -1,0 +1,9 @@
+rootProject.name = 'temaHibernate'
+include 'Hibernate'
+include 'MotorcyclesModel'
+include 'MotorcyclesPersistence'
+include 'MotorcyclesServices'
+include 'MotorcyclesNetworking'
+include 'MotorcyclesServer'
+include 'MotorcyclesClientFX'
+

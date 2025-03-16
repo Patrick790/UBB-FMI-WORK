@@ -1,0 +1,4 @@
+20 mai 2024 14:33:47,218 TRACE com.client.gui.LoginController 43 handleLogin - Enter
+20 mai 2024 14:33:50,796 TRACE com.client.gui.LoginController 61 handleLogin - Exit
+20 mai 2024 16:34:41,762 TRACE com.client.gui.LoginController 43 handleLogin - Enter
+20 mai 2024 16:34:45,395 TRACE com.client.gui.LoginController 61 handleLogin - Exit
