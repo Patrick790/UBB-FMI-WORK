@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Inregistrare Biblioteca</title>
+    <script type="text/javascript">
+        function checkStudent() {
+            document.getElementById("facult").required = document.getElementById("stud").checked;
+        }
+
+
+        function validateForm() {
+            const isStudent = document.getElementById("stud").checked;
+            if (isStudent) {
+                const facult = document.getElementById("facult").value;
+                if (facult === "") {
+                    alert("Va rugam sa completati toate câmpurile obligatorii.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body style="background-color: bisque">
+<h1 style="background-color: coral"> Inregistrare Biblioteca Central Universitara "Lucian Blaga"</h1><br>
+
+
+<form method="get" onsubmit="return validateForm()" action="">
+    <table border="solid" style="background-color: aliceblue">
+        <tr>
+            <td align="left">
+                <label>
+                    <strong> Pseudonim: </strong>
+                    <input type="radio" name="pseud" value="Domnul">
+                </label> Domnul
+                <label>
+                    <input type="radio" name="pseud" value="Doamna">
+                </label> Doamna
+            </td>
+        </tr>
+        <tr>
+            <td align="left"><label>
+                <strong> Prenume: </strong>
+                <input type="text" name="prenume" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td align="left"><label>
+                <strong> Nume: </strong>
+                <input type="text" name="nume" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td align="left"><label>
+                <strong> Numar de telefon: </strong>
+                <input type="text" name="nrtel" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <label>
+                    <strong> Ocupatie: </strong>
+                    <input type="checkbox" name="elev">
+                </label> Elev
+                <label>
+                    <input type="checkbox" id="stud" name="stud" onchange="checkStudent()">
+                </label> Student
+                <label>
+                    <input type="checkbox" name="ang">
+                </label> Angajat
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> CNP: </strong>
+                <label>
+                    <input type="text" name="cnp">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Adresa: </strong>
+                <label>
+                    <input type="text" name="adresa">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Tara de origine: </strong>
+                <label>
+                    <br>
+                    <select name="tara" multiple>
+                        <option value="ro"> Romania </option>
+                        <option value="uk"> Marea Britanie </option>
+                        <option value="fr"> Franta </option>
+                        <option value="us"> Statele Unite Ale Americii </option>
+                        <option value="hu"> Ungaria </option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <label>
+                    <strong> Data nasterii: </strong>
+                    <br>
+                    <strong> An: </strong>
+                    <select name="an">
+                        <option value="year"> 1900</option>
+                        <option value="year"> 1900</option>
+                        <option value="year"> 1901</option>
+                        <option value="year"> 1902</option>
+                        <option value="year"> 1903</option>
+                        <option value="year"> 1904</option>
+                        <option value="year"> 1905</option>
+                        <option value="year"> 1906</option>
+                        <option value="year"> 1907</option>
+                        <option value="year"> 1908</option>
+                        <option value="year"> 1909</option>
+                        <option value="year"> 1910</option>
+                        <option value="year"> 1911</option>
+                        <option value="year"> 1912</option>
+                        <option value="year"> 1913</option>
+                        <option value="year"> 1914</option>
+                        <option value="year"> 1915</option>
+                        <option value="year"> 1916</option>
+                        <option value="year"> 1917</option>
+                        <option value="year"> 1918</option>
+                        <option value="year"> 1919</option>
+                        <option value="year"> 1920</option>
+                        <option value="year"> 1921</option>
+                        <option value="year"> 1922</option>
+                        <option value="year"> 1923</option>
+                        <option value="year"> 1924</option>
+                        <option value="year"> 1925</option>
+                        <option value="year"> 1926</option>
+                        <option value="year"> 1927</option>
+                        <option value="year"> 1928</option>
+                        <option value="year"> 1929</option>
+                        <option value="year"> 1930</option>
+                        <option value="year"> 1931</option>
+                        <option value="year"> 1932</option>
+                        <option value="year"> 1933</option>
+                        <option value="year"> 1934</option>
+                        <option value="year"> 1935</option>
+                        <option value="year"> 1936</option>
+                        <option value="year"> 1937</option>
+                        <option value="year"> 1938</option>
+                        <option value="year"> 1939</option>
+                        <option value="year"> 1940</option>
+                        <option value="year"> 1941</option>
+                        <option value="year"> 1942</option>
+                        <option value="year"> 1943</option>
+                        <option value="year"> 1944</option>
+                        <option value="year"> 1945</option>
+                        <option value="year"> 1946</option>
+                        <option value="year"> 1947</option>
+                        <option value="year"> 1948</option>
+                        <option value="year"> 1949</option>
+                        <option value="year"> 1950</option>
+                        <option value="year"> 1951</option>
+                        <option value="year"> 1952</option>
+                        <option value="year"> 1953</option>
+                        <option value="year"> 1954</option>
+                        <option value="year"> 1955</option>
+                        <option value="year"> 1956</option>
+                        <option value="year"> 1957</option>
+                        <option value="year"> 1958</option>
+                        <option value="year"> 1959</option>
+                        <option value="year"> 1960</option>
+                        <option value="year"> 1961</option>
+                        <option value="year"> 1962</option>
+                        <option value="year"> 1963</option>
+                        <option value="year"> 1964</option>
+                        <option value="year"> 1965</option>
+                        <option value="year"> 1966</option>
+                        <option value="year"> 1967</option>
+                        <option value="year"> 1968</option>
+                        <option value="year"> 1969</option>
+                        <option value="year"> 1970</option>
+                        <option value="year"> 1971</option>
+                        <option value="year"> 1972</option>
+                        <option value="year"> 1973</option>
+                        <option value="year"> 1974</option>
+                        <option value="year"> 1975</option>
+                        <option value="year"> 1976</option>
+                        <option value="year"> 1977</option>
+                        <option value="year"> 1978</option>
+                        <option value="year"> 1979</option>
+                        <option value="year"> 1980</option>
+                        <option value="year"> 1981</option>
+                        <option value="year"> 1982</option>
+                        <option value="year"> 1983</option>
+                        <option value="year"> 1984</option>
+                        <option value="year"> 1985</option>
+                        <option value="year"> 1986</option>
+                        <option value="year"> 1987</option>
+                        <option value="year"> 1988</option>
+                        <option value="year"> 1989</option>
+                        <option value="year"> 1990</option>
+                        <option value="year"> 1991</option>
+                        <option value="year"> 1992</option>
+                        <option value="year"> 1993</option>
+                        <option value="year"> 1994</option>
+                        <option value="year"> 1995</option>
+                        <option value="year"> 1996</option>
+                        <option value="year"> 1997</option>
+                        <option value="year"> 1998</option>
+                        <option value="year"> 1999</option>
+                        <option value="year"> 2000</option>
+                        <option value="year"> 2001</option>
+                        <option value="year"> 2002</option>
+                        <option value="year"> 2003</option>
+                        <option value="year"> 2004</option>
+                        <option value="year"> 2005</option>
+                        <option value="year"> 2006</option>
+                        <option value="year"> 2007</option>
+                        <option value="year"> 2008</option>
+                        <option value="year"> 2009</option>
+                        <option value="year"> 2010</option>
+                        <option value="year"> 2011</option>
+                        <option value="year"> 2012</option>
+                        <option value="year"> 2013</option>
+                        <option value="year"> 2014</option>
+                        <option value="year"> 2015</option>
+                        <option value="year"> 2016</option>
+                        <option value="year"> 2017</option>
+                        <option value="year"> 2018</option>
+                        <option value="year"> 2019</option>
+                        <option value="year"> 2020</option>
+                        <option value="year"> 2021</option>
+                        <option value="year"> 2022</option>
+                    </select>
+                    <strong> Luna: </strong>
+                    <select name="luna">
+                        <option value="luna"> Ianuarie</option>
+                        <option value="luna"> Februarie</option>
+                        <option value="luna"> Martie</option>
+                        <option value="luna"> Aprilie</option>
+                        <option value="luna"> Mai</option>
+                        <option value="luna"> Iunie</option>
+                        <option value="luna"> Iulie</option>
+                        <option value="luna"> August</option>
+                        <option value="luna"> Septembrie</option>
+                        <option value="luna"> Octombrie</option>
+                        <option value="luna"> Noiembrie</option>
+                        <option value="luna"> Decembrie</option>
+                    </select>
+                    <strong> Zi: </strong>
+                    <select name="zi">
+                        <option value="zi"> 1</option>
+                        <option value="zi"> 2</option>
+                        <option value="zi"> 3</option>
+                        <option value="zi"> 4</option>
+                        <option value="zi"> 5</option>
+                        <option value="zi"> 6</option>
+                        <option value="zi"> 7</option>
+                        <option value="zi"> 8</option>
+                        <option value="zi"> 9</option>
+                        <option value="zi"> 10</option>
+                        <option value="zi"> 11</option>
+                        <option value="zi"> 12</option>
+                        <option value="zi"> 13</option>
+                        <option value="zi"> 14</option>
+                        <option value="zi"> 15</option>
+                        <option value="zi"> 16</option>
+                        <option value="zi"> 17</option>
+                        <option value="zi"> 18</option>
+                        <option value="zi"> 19</option>
+                        <option value="zi"> 20</option>
+                        <option value="zi"> 21</option>
+                        <option value="zi"> 22</option>
+                        <option value="zi"> 23</option>
+                        <option value="zi"> 24</option>
+                        <option value="zi"> 25</option>
+                        <option value="zi"> 26</option>
+                        <option value="zi"> 27</option>
+                        <option value="zi"> 28</option>
+                        <option value="zi"> 29</option>
+                        <option value="zi"> 30</option>
+                        <option value="zi"> 31</option>
+                    </select>
+
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Facultatea: </strong>
+                <label>
+                    <input type="text" id="facult" name="facult">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Forma de invatamant: </strong>
+                <label>
+                    <select name="invatamant" >
+                        <option value="lic"> Licenta</option>
+                        <option value="master"> Masterat</option>
+                        <option value="doctorat"> Studii Doctorale</option>
+
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Anul de studiu: </strong>
+                <label>
+                    <select name="an">
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                        <option value="6"> 6</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Numar Matricol: </strong>
+                <label>
+                    <input type="text" name="matricol">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Email: </strong>
+                <label>
+                    <input type="text" name="email">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <strong> Parola: </strong>
+                <label>
+                    <input type="password" name="password">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">
+                <label>
+                    <textarea name="note" rows="8" cols="30"> Ce v-a determinat sa va inscrieti?</textarea>
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td align="left">
+                <strong style="background-color: coral"> Orarul bibliotecii: </strong>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table border="solid">
+                    <tr>
+                        <th> Ziua </th>
+                        <th> Orele</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li> Luni</li>
+                                <li> Marti</li>
+                                <li> Miercuri</li>
+                                <li> Joi</li>
+                                <li> Vineri</li>
+                                <li> Sambata</li>
+                                <li> Duminica</li>
+                            </ol>
+                        </td>
+
+                        <td>
+                            <ul>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 10:00 - 18:00</li>
+                                <li> Inchis</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://www.bcucluj.ro/sites/default/files/public/logo.png" alt="Biblioteca Centrala Universitara" style="width: auto; height: auto">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+
+
+</body>
+</html>

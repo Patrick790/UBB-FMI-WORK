@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inregistrare Biblioteca</title>
+    <script>
+        function checkStudent() {
+            document.getElementById("facult").required = document.getElementById("stud").checked;
+        }
+
+
+        function validateForm() {
+            const isStudent = document.getElementById("stud").checked;
+            if (isStudent) {
+                const facult = document.getElementById("facult").value;
+                if (facult === "") {
+                    alert("Vă rugăm să completați toate câmpurile obligatorii.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body style="background-color: bisque">
+<h1 style="background-color: coral"> Inregistrare Biblioteca Central Universitara "Lucian Blaga"</h1><br>
+
+
+<form method="get" onsubmit="return validateForm()">
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <strong> Pseudonim: </strong>
+                    <input type="radio" name="pseud" value="Domnul">
+                </label> Domnul
+                <label>
+                    <input type="radio" name="pseud" value="Doamna">
+                </label> Doamna
+            </td>
+        </tr>
+        <tr>
+            <td><label>
+                <strong> Prenume: </strong>
+                <input type="text" name="prenume" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td><label>
+                <strong> Nume: </strong>
+                <input type="text" name="nume" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td><label>
+                <strong> Numar de telefon: </strong>
+                <input type="text" name="nrtel" style="text-align: left;">
+            </label></td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>
+                    <strong> Ocupatie: </strong>
+                    <input type="checkbox" name="elev">
+                </label> Elev
+                <label>
+                    <input type="checkbox" id="stud" name="stud" onchange="checkStudent()">
+                </label> Student
+                <label>
+                    <input type="checkbox" name="ang">
+                </label> Angajat
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> CNP: </strong>
+                <label>
+                    <input type="text" name="cnp">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Adresa: </strong>
+                <label>
+                    <input type="text" name="adresa">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Tara de origine: </strong>
+                <label>
+                    <br>
+                    <select name="tara" multiple>
+                        <option value="ro"> Romania </option>
+                        <option value="uk"> Marea Britanie </option>
+                        <option value="fr"> Franta </option>
+                        <option value="us"> Statele Unite Ale Americii </option>
+                        <option value="hu"> Ungaria </option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>
+                    <strong> Data nasterii: </strong>
+                    <input type="date" name="birthday">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Facultatea: </strong>
+                <label>
+                    <input type="text" id="facult" name="facult">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Forma de invatamant: </strong>
+                <label>
+                    <select name="invatamant" >
+                        <option value="lic"> Licenta</option>
+                        <option value="master"> Masterat</option>
+                        <option value="doctorat"> Studii Doctorale</option>
+
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Anul de studiu: </strong>
+                <label>
+                    <select name="an">
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
+                        <option value="6"> 6</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Numar Matricol: </strong>
+                <label>
+                    <input type="text" name="matricol">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Email: </strong>
+                <label>
+                    <input type="text" name="email">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong> Parola: </strong>
+                <label>
+                    <input type="password" name="password">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>
+                    <textarea name="note" rows="8" cols="30"> Ce v-a determinat sa va inscrieti?</textarea>
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <strong style="background-color: coral"> Orarul bibliotecii: </strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <th> Ziua </th>
+                        <th> Orele</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol>
+                                <li> Luni</li>
+                                <li> Marti</li>
+                                <li> Miercuri</li>
+                                <li> Joi</li>
+                                <li> Vineri</li>
+                                <li> Sambata</li>
+                                <li> Duminica</li>
+                            </ol>
+                        </td>
+
+                        <td>
+                            <ul>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 8:00 - 20:00</li>
+                                <li> 10:00 - 18:00</li>
+                                <li> Inchis</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://www.bcucluj.ro/sites/default/files/public/logo.png" alt="Biblioteca Centrala Universitara" style="width: auto; height: auto">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+
+
+</body>
+</html>
