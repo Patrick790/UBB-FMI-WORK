@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="247a64e1-a8ae-48ac-933c-5790e4d44861" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secvential.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GenerareFisiere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC1_P9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC2_P9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC3_P9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC4_P9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/RezultateC5_P9.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2pOd9Trly9S2QQSWu6dakdXKk7q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ardel/IdeaProjects/PPD/Lab4/Secvential/src/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ardel\IdeaProjects\PPD\Lab4\Secvential\src\data" />
+      <recent name="C:\Users\ardel\IdeaProjects\PPD\Lab4\Secvential\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ardel\IdeaProjects\PPD\Lab4\Secvential\src\data" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="247a64e1-a8ae-48ac-933c-5790e4d44861" name="Changes" comment="" />
+      <created>1732640905443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732640905443</updated>
+      <workItem from="1732640906485" duration="2745000" />
+      <workItem from="1732690000314" duration="4705000" />
+      <workItem from="1732705624544" duration="2392000" />
+      <workItem from="1732713433651" duration="3310000" />
+      <workItem from="1732986305187" duration="16000" />
+      <workItem from="1734193109905" duration="2023000" />
+      <workItem from="1734534522615" duration="636000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
