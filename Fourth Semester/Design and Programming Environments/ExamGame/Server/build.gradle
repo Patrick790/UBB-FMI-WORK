@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.server'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation project(':Model')
+    implementation project(':Network')
+    implementation project(':Persistence')
+    implementation project(':Services')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = "StartServer"
+}
