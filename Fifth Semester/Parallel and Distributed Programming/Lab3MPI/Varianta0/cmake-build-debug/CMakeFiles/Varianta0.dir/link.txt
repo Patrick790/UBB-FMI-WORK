@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Varianta0.dir/main.cpp.o -o Varianta0 

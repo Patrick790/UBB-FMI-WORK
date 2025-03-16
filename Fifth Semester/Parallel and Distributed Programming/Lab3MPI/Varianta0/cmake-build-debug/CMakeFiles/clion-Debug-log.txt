@@ -1,0 +1,4 @@
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/ardel/CLionProjects/PPD/LAB3/Varianta0/cmake-build-debug && /opt/cmake-3.25/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /mnt/c/Users/ardel/CLionProjects/PPD/LAB3/Varianta0 -B /mnt/c/Users/ardel/CLionProjects/PPD/LAB3/Varianta0/cmake-build-debug"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/ardel/CLionProjects/PPD/LAB3/Varianta0/cmake-build-debug
