@@ -1,0 +1,15 @@
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 50px;
+    cursor: pointer;
+    background-color: mediumpurple;
+    background-size: cover; /* sau background-size: contain; */
+}
