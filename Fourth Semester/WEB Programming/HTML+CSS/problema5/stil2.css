@@ -1,0 +1,29 @@
+.container-box {
+
+    height: auto;
+    width: 63vh;
+    border: 2px solid black;
+
+}
+
+.container {
+    width: 60vh;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    padding: 10px;
+    background-color: yellow;
+}
+.image-box {
+    width: 350px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-box img {
+    width: 200px;
+    height: 250px;
+}

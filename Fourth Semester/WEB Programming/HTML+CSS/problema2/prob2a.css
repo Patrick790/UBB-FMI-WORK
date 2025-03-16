@@ -1,0 +1,66 @@
+.header {
+    background-color: red;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    height: 15vh;
+    padding: 10px;
+}
+
+.main {
+    background-color: rgb(38, 159, 40);
+    color: rgb(0, 0, 0);
+    align-items: center;
+    height: 55vh;
+    padding: 10px;
+}
+
+.footer {
+    background-color: rgb(247, 136, 136);
+    color: rgb(0, 0, 0);
+    align-items: center;
+    height: 15vh;
+    padding: 10px;
+}
+
+.table {
+    background-color: yellow;
+    color: black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    border-right: 1px solid black; /* adaugam bordura dupa fiecare */
+}
+
+nav ul li:last-child {
+    border-right: none; /* nu este nevoie de bordura la ultimul */
+
+}
+
+nav ul li a {
+    background-color: yellow;
+}

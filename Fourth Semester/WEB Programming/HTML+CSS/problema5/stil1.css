@@ -1,0 +1,29 @@
+.container-box {
+    height: 95vh;
+    width: 85vh;
+    border: 2px solid black;
+}
+
+.container {
+    width: 50vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+}
+
+.image_box {
+    width: 250px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: aqua;
+}
+
+.image_box img {
+    width: 200px;
+    height: 250px;
+}
